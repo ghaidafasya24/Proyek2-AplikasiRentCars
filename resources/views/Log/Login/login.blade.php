@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style/login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
     <title>Login</title>
 </head>
 
@@ -38,7 +38,7 @@
 
             <p class="signup-link">
                 <!-- No account? -->
-                <a href="" class="up">Kembali ke halaman utama!</a>
+                <a href="{{ route('landingpage') }}" class="up">Kembali ke halaman utama!</a>
             </p>
 
         </form>
