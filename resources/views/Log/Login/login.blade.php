@@ -22,24 +22,30 @@
                 <span class="star"></span>
             </section>
 
-            <div class="mid">
 
-                <div class="input-container">
-                    <input class="input-username" type="username" placeholder="Masukkan username">
-                    <span> </span>
-                </div>
-                <div class="input-container">
-                    <input class="input-pwd" type="password" placeholder="Masukkan password">
-                </div>
-                <button type="submit" class="submit">
-                    <span class="sign-text">Login</span>
-                </button>
-            </div>
+            <form action="login" method="POST">
+                <div class="mid">
+                    <div class="input-container">
+                        <label for="username"></label>
+                        <input class="input-username" name="username" type="username" placeholder="Masukkan username" autofocus>
+                        <span> </span>
+                    </div>
+                    <div class="input-container">
+                        <label for="password"></label>
+                        <input class="input-pwd" name="password" type="password" placeholder="Masukkan password">
+                    </div>
 
-            <p class="signup-link">
-                <!-- No account? -->
-                <a href="{{ route('landingpage') }}" class="up">Kembali ke halaman utama!</a>
-            </p>
+                    <button type="submit" class="submit">
+                        <span class="sign-text">Login</span>
+                    </button>
+                </div>
+
+                <p class="signup-link">
+                    <!-- No account? -->
+                    <a href="{{ url('/') }}" class="up">Kembali ke halaman utama!</a>
+                </p>
+
+            </form>
 
         </form>
 
