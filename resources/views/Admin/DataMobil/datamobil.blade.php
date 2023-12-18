@@ -17,6 +17,8 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
+                <a type="button" class="btn btn-success" href="{{ route('tambahmobil') }}"><i class="fa-solid fa-plus"></i> Tambah</a>
+                <hr>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
@@ -37,7 +39,10 @@
                             <td>Hitam</td>
                             <td>4</td>
                             <td><img src="" alt=""></td>
-                            <td></td>
+                            <td>
+                                <a type="button" class="btn btn-warning" href="{{ route('editmobil') }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a type="button" class="btn btn-danger" href=""><i class="fa-solid fa-trash"></i></a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

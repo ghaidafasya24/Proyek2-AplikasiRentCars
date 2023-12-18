@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class datapengembalianController extends Controller
+class PengembalianController extends Controller
 {
     public function datapengembalian(){
         return view('Admin.DataPengembalian.datapengembalian');

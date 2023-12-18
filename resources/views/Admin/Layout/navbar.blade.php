@@ -197,7 +197,7 @@
             <div class="modal-body">Apakah anda yakin ingin logout?</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                <a class="btn btn-primary" href="{{ route('Login') }}">Logout</a>
+                <a class="btn btn-primary" href="{{ route('Signin') }}">Logout</a>
             </div>
         </div>
     </div>

@@ -12,14 +12,14 @@
     <title>@yield('title', 'Dashboard')</title>
 
     <!-- Custom fonts for this template-->
-    <link href="assets/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -40,7 +40,7 @@
                 <!-- Begin Page Content -->
                 @yield('content')
                 <!-- Footer -->
-                @include('Admin.Layout.footer')
+                {{-- @include('Admin.Layout.footer') --}}
                 <!-- End of Footer -->
             </div>
             <!-- End of Content Wrapper -->
