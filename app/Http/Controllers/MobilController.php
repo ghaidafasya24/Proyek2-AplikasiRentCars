@@ -45,7 +45,7 @@ class MobilController extends Controller
 
         Mobil::create($dataMobil);
 
-        return redirect()->route('datamobil')->with('success', 'Product added successfully.');
+        return redirect()->route('datamobil')->with('success', 'Data Mobil Berhasil Ditambahkan.');
     }
 
     public function viewEditMobil($id)
