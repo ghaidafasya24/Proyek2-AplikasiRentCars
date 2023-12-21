@@ -34,19 +34,16 @@
                                 alt="">
                         </div>
                         <div class="col-md-8">
-                            <form action="" method="post">
-                                <div class="card-body">
-                                    <input type="hidden" name="id" value="">
-                                    <h5 class="card-title">{{ $mobil->merek_mobil }}</h5>
-                                    <h6 class="card-text"> Harga Sewa :</h6>
-                                    <p> Rp. {{ number_format($mobil->harga, 0, ',', '.') }}</p>
-                                    <p>Mobil {{ $mobil->merek_mobil }} yang merupakan keluaran tahun{{ $mobil->tahun }}
-                                        mempunyai warna {{ $mobil->warna }}. Anda dapat menyewa dengan
-                                        {{ $mobil->harga }} per harinya
-                                    </p>
-                                    <button type="submit" class="btn btn-primary">Sewa</button>
-                                </div>
-                            </form>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $mobil->merek_mobil }}</h5>
+                                <h6 class="card-text"> Harga Sewa :</h6>
+                                <p> Rp. {{ number_format($mobil->harga, 0, ',', '.') }}</p>
+                                <p>Mobil {{ $mobil->merek_mobil }} yang merupakan keluaran tahun{{ $mobil->tahun }}
+                                    mempunyai warna {{ $mobil->warna }}. Anda dapat menyewa dengan
+                                    {{ $mobil->harga }} per harinya
+                                </p>
+                                <button type="submit" class="btn btn-primary">Sewa</button>
+                            </div>
                         </div>
                     </div>
                 </div>

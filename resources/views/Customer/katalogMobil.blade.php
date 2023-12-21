@@ -21,7 +21,7 @@
         <main>
             <br><br><br>
 
-            <h1 class="text-center">DAFTAR MOBIL</h1>
+            <h1 class="text-center">DETAIL MOBIL</h1>
             <hr><br>
 
             <!-- content  -->
@@ -29,28 +29,27 @@
 
                 <div class="card mb-3 col-ms-4" style="max-width: 1000px;">
                     <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="{{ asset('assets/img/mobil/'.$mobil->gambar) }}" class="img-fluid rounded-start" alt="">
-                        </div>
-                        <div class="col-md-8">
-                            <form action="" method="post">
-                                @foreach ($mobils as $mobil)
-                                    <div class="card-body">
-                                        <input type="hidden" name="id" value="">
-                                        <h5 class="card-title">{{ $mobil->merek_mobil }}</h5>
-                                        <h6 class="card-text"> Harga Sewa :</h6>
-                                        <p> Rp. {{ number_format($mobil->harga, 0, ',', '.') }}</p>
-                                        <input type="hidden" name="wakil" value="">
-                                        <button href="{{ route('detailMobil',$mobil->id_mobil) }}" name=""
-                                            class="btn btn-primary">Detail</button>
-                                    </div>
-                                @endforeach
-                            </form>
-                        </div>
+                        @foreach ($mobils as $mobil)
+                            <div class="col-md-4">
+                                <img src="{{ asset('assets/img/mobil/' . $mobil->gambar) }}"
+                                    class="img-fluid rounded-start" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <input type="hidden" name="id" value="">
+                                    <h5 class="card-title">{{ $mobil->merek_mobil }}</h5>
+                                    <h6 class="card-text"> Harga Sewa :</h6>
+                                    <p> Rp. {{ number_format($mobil->harga, 0, ',', '.') }}</p>
+                                    <input type="hidden" name="wakil" value="">
+                                    <a href="{{ route('detailMobil', $mobil->id_mobil) }}" name=""
+                                        class="btn btn-primary">Detail</a>
+                                </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-        </main>
+    </div>
+    </main>
     </div>
     <!-- content end  -->
 
