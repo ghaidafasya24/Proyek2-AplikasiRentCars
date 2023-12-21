@@ -24,16 +24,14 @@
             <h1 class="text-center">DETAIL MOBIL</h1>
             <hr>
 
-            <button type="submit" class="btn btn-secondary">Kembali</button>
             <!-- content  -->
+            <div class="w-25 ms-5 mb-2 text-center">
+                <a href="{{ route('Katalog.Views') }}" class="btn btn-secondary ms-5">Kembali</a>   
+            </div>
             <div class="row w-100 d-flex justify-content-center align-items-center" style="padding-left: 10em;">
-
                 <div class="card mb-3 col-ms-4" style="max-width: 1000px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-
-
-
                             <img src="{{ asset('assets/img/mobil/' . $mobil->gambar) }}" class="img-fluid rounded-start"
                                 alt="">
                         </div>
@@ -54,7 +52,7 @@
                                 <p> {{ $mobil->kapasitas_penumpang }} </p>
 
 
-                                <button type="submit" class="btn btn-primary">Booking</button>
+                                <a href="{{ route('booking') }}" class="btn btn-primary">Booking</a>
                             </div>
                         </div>
                     </div>

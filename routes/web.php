@@ -32,10 +32,10 @@ Route::get('/', function () {
 });
 
 
-Route::get('/katalogDetail/{id}', [KatalogController::class, 'detailMobil'])->name('detailMobil');
-
 // Katalog mobil => daftar mobil
 Route::get('/KatalogMobil', [KatalogController::class, 'views'])->name('Katalog.Views');
+Route::get('/katalogDetail/{id}', [KatalogController::class, 'detailMobil'])->name('detailMobil');
+Route::get('/dataDiri',[CustomerController::class,'booking'])->name('booking');
 
 // Landing page => Login
 Route::get('/SignIn', [LoginController::class, 'signin'])->name('Signin');
