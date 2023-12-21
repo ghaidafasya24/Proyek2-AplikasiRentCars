@@ -13,7 +13,9 @@ class KatalogController extends Controller
         return view('Customer.katalogMobil', compact('mobils'));
     }
 
-    public function detailMobil(){
-        return view('Customer.detailMobil');
+    public function detailMobil($id)
+    {
+        $mobil = Mobil::findOrFail($id);
+        return view('Customer.detailMobil',compact('mobil'));
     }
 }

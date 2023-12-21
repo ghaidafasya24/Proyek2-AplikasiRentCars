@@ -32,7 +32,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/katalog', [KatalogController::class, 'detailMobil'])->name('detailMobil');
+Route::get('/katalogDetail/{id}', [KatalogController::class, 'detailMobil'])->name('detailMobil');
 
 // Katalog mobil => daftar mobil
 Route::get('/KatalogMobil', [KatalogController::class, 'views'])->name('Katalog.Views');
