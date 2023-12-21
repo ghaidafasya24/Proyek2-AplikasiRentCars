@@ -21,7 +21,7 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom styles for this template-->
-    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
 </head>
 
@@ -54,21 +54,21 @@
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="{{ asset('assets/js/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="assets/js/sb-admin-2.min.js"></script>
+    <script src="{{ asset('assets/js/sb-admin-2.min.js') }}"></script>
 
     <!-- Page level plugins -->
-    <script src="assets/js/chart.min.js"></script>
+    <script src="{{ asset('assets/js/chart.min.js') }}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="assets/js/chart-area-demo.js"></script>
-    <script src="assets/js/chart-pie-demo.js"></script>
+    <script src="{{ asset('assets/js/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('assets/js/chart-pie-demo.js') }}"></script>
 
 </body>
 

@@ -1,14 +1,8 @@
 @extends('Admin.Layout.layoutAdmin')
-@section('title', 'Tambah Mobil')
+@section('title', 'Edit Mobil')
 @section('content')
 
     <div class="container-fluid">
-
-        <!-- Page Heading -->
-        {{-- <h1 class="h3 mb-2 text-gray-800">Data Mobil</h1> --}}
-        <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                For more information about DataTables, please visit the <a target="_blank"
-                    href="https://datatables.net">official DataTables documentation</a>.</p> -->
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -16,45 +10,54 @@
                 <h6 class="m-0 font-weight-bold text-primary">Edit Mobil</h6>
             </div>
             <div class="card-body">
-                <div class="table-responsive">
-
+                <form action="{{ route('editmobil.put', $mobil->id_mobil) }}" method="POST"
+                    enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Merek Mobil</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1">
+                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Masukkan merek mobil" name="merek_mobil" value="{{ $mobil->merek_mobil }}">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Tahun</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1">
+                        <label for="exampleFormControlInput2" class="form-label">Tahun</label>
+                        <input type="number" class="form-control" id="exampleFormControlInput2"
+                            placeholder="Masukkan tahun mobil" name="tahun" value="{{ $mobil->tahun }}">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Warna</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1">
+                        <label for="exampleFormControlInput3" class="form-label">Warna</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput3"
+                            placeholder="Masukkan warna mobil" name="warna" value="{{ $mobil->warna }}">
                     </div>
+
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Kapasitas Penumpang</label>
-                        <select class="form-control" name="" aria-label="Default select example">
+                        <select class="form-control" name="kapasitas_penumpang" aria-label="Default select example">
                             <option selected>Jumlah Kapasitas Penumpang</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                        </select> 
+                            <option value="1" {{ $mobil->kapasitas_penumpang == '1' ? 'selected' : '' }}>1</option>
+                            <option value="2" {{ $mobil->kapasitas_penumpang == '2' ? 'selected' : '' }}>2</option>
+                            <option value="3" {{ $mobil->kapasitas_penumpang == '3' ? 'selected' : '' }}>3</option>
+                            <option value="4" {{ $mobil->kapasitas_penumpang == '4' ? 'selected' : '' }}>4</option>
+                            <option value="5" {{ $mobil->kapasitas_penumpang == '5' ? 'selected' : '' }}>5</option>
+                            <option value="6" {{ $mobil->kapasitas_penumpang == '6' ? 'selected' : '' }}>6</option>
+                            <option value="7" {{ $mobil->kapasitas_penumpang == '7' ? 'selected' : '' }}>7</option>
+                        </select>
                     </div>
+
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Foto Mobil</label>
-                        <input class="form-control" type="file" id="formFile">
+                        <input class="form-control" type="file" id="formFile" name="gambar">
+                        <img src="{{ asset('assets/img/mobil/' . $mobil->gambar) }}" width="50" alt=""
+                            height="30" class="mt-2">
                     </div>
                     <hr>
-
-
-                </div>
-                <a type="button" class="btn btn-success" href=""> Submit </a>
-                <a type="button" class="btn btn-secondary" href="{{ route('datamobil') }}"> Kembali </a>
+                    <button class="btn btn-success" type="submit">Submit</button>
+                    <a type="button" class="btn btn-secondary" href="{{ route('datamobil') }}"> Kembali </a>
+                </form>
             </div>
         </div>
+    </div>
 
     </div>
     <!-- /.container-fluid -->

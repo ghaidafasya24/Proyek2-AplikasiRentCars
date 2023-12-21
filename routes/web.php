@@ -30,21 +30,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-    // Landing page => Login
-    Route::get('/SignIn',[LoginController::class,'signin'])->name('Signin');
+// Landing page => Login
+Route::get('/SignIn', [LoginController::class, 'signin'])->name('Signin');
 
-    // Login 
-    Route::middleware('guest')->group(function () {
-    Route::post('/login',[LoginController::class,'login'])->name('Login');
-    
+// Login 
+Route::middleware('guest')->group(function () {
+    Route::post('/login', [LoginController::class, 'login'])->name('Login');
+
     // Admin 
-    Route::get('/DashboardAdmin',[DashboardAdminController::class,'view'])->name('dashboard');
-    Route::get('/DataMobil',[MobilController::class,'datamobil'])->name('datamobil');
-    Route::get('/TambahMobil',[MobilController::class,'createMobil'])->name('tambahmobil');
-    Route::get('/EditMobil',[MobilController::class,'editMobil'])->name('editmobil');
-    Route::get('/DataSewa',[SewaController::class,'datasewa'])->name('datasewa');
-    Route::get('/DataPengembalian',[PengembalianController::class,'datapengembalian'])->name('datapengembalian');
-    Route::get('/RiwayatTransaksi',[RiwayatTransaksiController::class,'riwayattransaksi'])->name('riwayattransaksi');
+    Route::get('/DashboardAdmin', [DashboardAdminController::class, 'view'])->name('dashboard');
+
+    Route::get('/DataMobil', [MobilController::class, 'datamobil'])->name('datamobil');
+    Route::get('/TambahMobil', [MobilController::class, 'viewCreateMobil'])->name('tambahmobil');
+    Route::post('/TambahMobilPost', [MobilController::class, 'store'])->name('tambahmobil.post');
+    Route::get('/EditMobil/{id}', [MobilController::class, 'viewEditMobil'])->name('editmobil');
+    Route::put('/EditMobilPut/{id}', [MobilController::class, 'EditMobil'])->name('editmobil.put');
+    Route::delete('/EditMobilDestroy/{id}', [MobilController::class, 'deleteMobil'])->name('deletemobil');
+
+    Route::get('/DataSewa', [SewaController::class, 'datasewa'])->name('datasewa');
+    Route::get('/DataPengembalian', [PengembalianController::class, 'datapengembalian'])->name('datapengembalian');
+    Route::get('/RiwayatTransaksi', [RiwayatTransaksiController::class, 'riwayattransaksi'])->name('riwayattransaksi');
 });
 
 
