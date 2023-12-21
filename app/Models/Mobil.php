@@ -7,13 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mobil extends Model
 {
+    protected $table = 'cars';
     use HasFactory;
+    protected $guarded = ['id'];
 
-    protected $fillable = [
-        'merek_mobil',
-        'tahun',
-        'warna',
-        'kapasitas_penumpang',
-        'gambar',
-    ];
+    // protected $fillable = [
+    //     'merek_mobil',
+    //     'tahun',
+    //     'warna',
+    //     'kapasitas_penumpang',
+    //     'gambar',
+    // ];
 }
