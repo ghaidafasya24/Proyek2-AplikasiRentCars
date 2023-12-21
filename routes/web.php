@@ -31,7 +31,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/katalog', [KatalogController::class, 'views'])->name('Katalog.Views');
+
+Route::get('/katalog', [KatalogController::class, 'detailMobil'])->name('detailMobil');
+
+// Katalog mobil => daftar mobil
+Route::get('/KatalogMobil', [KatalogController::class, 'views'])->name('Katalog.Views');
 
 // Landing page => Login
 Route::get('/SignIn', [LoginController::class, 'signin'])->name('Signin');

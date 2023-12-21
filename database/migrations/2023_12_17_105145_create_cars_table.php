@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('merek_mobil');
             $table->string('tahun');
             $table->string('warna');
+            $table->string('harga');
             $table->string('kapasitas_penumpang');
             $table->string('gambar');
             $table->timestamps();

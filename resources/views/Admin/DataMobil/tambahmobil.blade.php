@@ -55,6 +55,12 @@
                         </div>
                         <hr>
 
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput3" class="form-label">Harga</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput3"
+                                placeholder="Masukkan harga sewa" name="harga">
+                        </div>
+
 
                     </div>
                     <button class="btn btn-success" type="submit">Submit</button>

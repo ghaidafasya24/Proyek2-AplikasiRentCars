@@ -7,8 +7,13 @@ use Illuminate\Http\Request;
 
 class KatalogController extends Controller
 {
-    public function views(){
+    public function views()
+    {
         $mobils = Mobil::all();
-        return view('katalogMobil',compact('mobils'));
+        return view('Customer.katalogMobil', compact('mobils'));
+    }
+
+    public function detailMobil(){
+        return view('Customer.detailMobil');
     }
 }

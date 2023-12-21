@@ -19,5 +19,6 @@ class Mobil extends Model
         'warna',
         'kapasitas_penumpang',
         'gambar',
+        'harga',
     ];
 }

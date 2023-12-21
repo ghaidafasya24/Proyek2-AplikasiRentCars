@@ -7,8 +7,8 @@
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Data Mobil</h1>
         <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                                                    For more information about DataTables, please visit the <a target="_blank"
-                                                        href="https://datatables.net">official DataTables documentation</a>.</p> -->
+                                                        For more information about DataTables, please visit the <a target="_blank"
+                                                            href="https://datatables.net">official DataTables documentation</a>.</p> -->
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -29,6 +29,7 @@
                                 <th>WARNA</th>
                                 <th>KAPASITAS PENUMPANG</th>
                                 <th>FOTO</th>
+                                <th>HARGA</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -44,6 +45,8 @@
                                         <img src="{{ asset('assets/img/mobil/' . $mobil->gambar) }}"
                                             alt="{{ $mobil->merek_mobil }}" width="50">
                                     </td>
+                                    <td>Rp. {{ number_format($mobil->harga, 0, ',', '.')  }}</td>
+
                                     <td class="d-flex justify-content-center align-items-center">
                                         <a class="btn btn-warning" href="{{ route('editmobil', $mobil->id_mobil) }}"><i
                                                 class="fa-solid fa-pen-to-square"></i></a> |

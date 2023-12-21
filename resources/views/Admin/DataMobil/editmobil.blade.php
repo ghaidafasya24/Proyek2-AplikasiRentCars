@@ -10,11 +10,10 @@
                 <h6 class="m-0 font-weight-bold text-primary">Edit Mobil</h6>
             </div>
             <div class="card-body">
-                <form action="{{ route('editmobil.put', $mobil->id_mobil) }}" method="POST"
-                    enctype="multipart/form-data">
+                <form action="{{ route('editmobil.put', $mobil->id_mobil) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    
+
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Merek Mobil</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1"
@@ -51,7 +50,14 @@
                         <img src="{{ asset('assets/img/mobil/' . $mobil->gambar) }}" width="50" alt=""
                             height="30" class="mt-2">
                     </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput3" class="form-label">Harga</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput3"
+                            placeholder="Masukkan warna mobil" name="warna" value="{{ $mobil->harga }}">
+                    </div>
+
                     <hr>
+
                     <button class="btn btn-success" type="submit">Submit</button>
                     <a type="button" class="btn btn-secondary" href="{{ route('datamobil') }}"> Kembali </a>
                 </form>
