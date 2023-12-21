@@ -19,30 +19,42 @@
 
     <div id="layoutSidenav_content">
         <main>
-            <br><br><br>
+            <br>
+            <hr>
+            <h1 class="text-center">DETAIL MOBIL</h1>
+            <hr>
 
-            <h1 class="text-center">DAFTAR MOBIL</h1>
-            <hr><br>
-
+            <button type="submit" class="btn btn-secondary">Kembali</button>
             <!-- content  -->
             <div class="row w-100 d-flex justify-content-center align-items-center" style="padding-left: 10em;">
 
                 <div class="card mb-3 col-ms-4" style="max-width: 1000px;">
                     <div class="row g-0">
                         <div class="col-md-4">
+
+
+
                             <img src="{{ asset('assets/img/mobil/' . $mobil->gambar) }}" class="img-fluid rounded-start"
                                 alt="">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $mobil->merek_mobil }}</h5>
-                                <h6 class="card-text"> Harga Sewa :</h6>
+
+                                <h6 class="card-text"> Harga Sewa Perhari :</h6>
                                 <p> Rp. {{ number_format($mobil->harga, 0, ',', '.') }}</p>
-                                <p>Mobil {{ $mobil->merek_mobil }} yang merupakan keluaran tahun{{ $mobil->tahun }}
-                                    mempunyai warna {{ $mobil->warna }}. Anda dapat menyewa dengan
-                                    {{ $mobil->harga }} per harinya
-                                </p>
-                                <button type="submit" class="btn btn-primary">Sewa</button>
+
+                                <h6 class="card-text"> Tahun :</h6>
+                                <p> {{ $mobil->tahun }} </p>
+
+                                <h6 class="card-text"> Warna :</h6>
+                                <p> {{ $mobil->warna }} </p>
+
+                                <h6 class="card-text"> Kapasitas Penumpang :</h6>
+                                <p> {{ $mobil->kapasitas_penumpang }} </p>
+
+
+                                <button type="submit" class="btn btn-primary">Booking</button>
                             </div>
                         </div>
                     </div>

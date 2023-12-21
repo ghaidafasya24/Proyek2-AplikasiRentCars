@@ -40,7 +40,7 @@
                                     <h5 class="card-title">{{ $mobil->merek_mobil }}</h5>
                                     <h6 class="card-text"> Harga Sewa :</h6>
                                     <p> Rp. {{ number_format($mobil->harga, 0, ',', '.') }}</p>
-                                    <input type="hidden" name="wakil" value="">
+                                    <input type="hidden" name="id" value="">
                                     <a href="{{ route('detailMobil', $mobil->id_mobil) }}" name=""
                                         class="btn btn-primary">Detail</a>
                                 </div>
