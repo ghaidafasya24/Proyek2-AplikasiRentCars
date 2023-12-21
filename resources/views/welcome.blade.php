@@ -32,7 +32,7 @@
         </div> -->
 
         <!-- Button trigger modal -->
-<button type="button" class="">
+<button type="button" class="" onclick="return window.location.href = '{{ route('Katalog.Views') }}'">
     KATALOG MOBIL
 </button>
 

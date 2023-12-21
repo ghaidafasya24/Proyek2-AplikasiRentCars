@@ -6,6 +6,7 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\datamobilController;
 use App\Http\Controllers\datapengembalianController;
 use App\Http\Controllers\datasewaController;
+use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\LoginController as ControllersLoginController;
 use App\Http\Controllers\MobilController;
@@ -29,6 +30,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/katalog', [KatalogController::class, 'views'])->name('Katalog.Views');
 
 // Landing page => Login
 Route::get('/SignIn', [LoginController::class, 'signin'])->name('Signin');
