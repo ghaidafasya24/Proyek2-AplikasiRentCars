@@ -36,6 +36,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Tabel Master</h6>
                 <a class="collapse-item" href="{{ route('datamobil') }}">Data Mobil</a>
+                <a class="collapse-item" href="{{ route('datacustomer') }}">Data Customer</a>
                 <a class="collapse-item" href="{{ route('datasewa') }}">Data Sewa</a>
                 <a class="collapse-item" href="{{ route('datapengembalian') }}">Data Pengembalian</a>
             </div>

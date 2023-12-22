@@ -17,6 +17,9 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
+                <a type="button" class="btn btn-success" href="">
+                    <i class="fa-solid fa-plus"></i> Tambah</a>
+                    <br><br>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
@@ -39,7 +42,14 @@
                             <td>12 Desember 2023</td>
                             <td>07.00</td>
                             <td>Bandung</td>
-                            <td></td>
+                            <td>
+                                <a class="btn btn-warning" href="">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <button type="submit" class="btn btn-danger"
+                                                onclick="return confirm('Yakin mau hapus?')"><i
+                                                    class="fa-solid fa-trash"></i></button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

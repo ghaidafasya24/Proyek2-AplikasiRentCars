@@ -46,16 +46,23 @@ Route::middleware('guest')->group(function () {
 
     // Admin 
     Route::get('/DashboardAdmin', [DashboardAdminController::class, 'view'])->name('dashboard');
-
+    // Data Mobil
     Route::get('/DataMobil', [MobilController::class, 'datamobil'])->name('datamobil');
     Route::get('/TambahMobil', [MobilController::class, 'viewCreateMobil'])->name('tambahmobil');
     Route::post('/TambahMobilPost', [MobilController::class, 'store'])->name('tambahmobil.post');
     Route::get('/EditMobil/{id}', [MobilController::class, 'viewEditMobil'])->name('editmobil');
     Route::put('/EditMobilPut/{id}', [MobilController::class, 'EditMobil'])->name('editmobil.put');
     Route::delete('/EditMobilDestroy/{id}', [MobilController::class, 'deleteMobil'])->name('deletemobil');
-
+    
+    // Data Customer
+    Route::get('/DataCustomer', [CustomerController::class, 'dataCustomer'])->name('datacustomer');
     Route::get('/DataSewa', [SewaController::class, 'datasewa'])->name('datasewa');
+
+    // Data Pengembalian 
     Route::get('/DataPengembalian', [PengembalianController::class, 'datapengembalian'])->name('datapengembalian');
+    Route::get('/FormPengembalianMobil', [PengembalianController::class, 'formPengembalian'])->name('formPengembalian');
+
+    // Data Riwayat Transaksi 
     Route::get('/RiwayatTransaksi', [RiwayatTransaksiController::class, 'riwayattransaksi'])->name('riwayattransaksi');
 });
 

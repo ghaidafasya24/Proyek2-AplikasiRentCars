@@ -21,10 +21,13 @@
         <main>
             <br><br><br>
 
-            <h1 class="text-center">DETAIL MOBIL</h1>
+            <h1 class="text-center">DAFTAR MOBIL</h1>
             <hr><br>
 
             <!-- content  -->
+            <div class="w-25 ms-5 mb-2 text-center">
+                <a href="" class="btn btn-secondary ms-5">Kembali</a>   
+            </div>
             <div class="row w-100 d-flex justify-content-center align-items-center" style="padding-left: 10em;">
 
                 <div class="card mb-3 col-ms-4" style="max-width: 1000px;">

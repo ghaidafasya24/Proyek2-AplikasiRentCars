@@ -23,7 +23,6 @@
                             <th>ID TRANSAKSI</th>
                             <th>ID CUSTOMER</th>
                             <th>DURASI SEWA</th>
-                            <th>METODE PEMBAYARAN</th>
                             <th>TOTAL BAYAR</th>
                         </tr>
                     </thead>
@@ -32,7 +31,6 @@
                             <td>1</td>
                             <td>1</td>
                             <td>2 hari</td>
-                            <td>Transfer</td>
                             <td>1.400.000</td>
                         </tr>
                     </tbody>

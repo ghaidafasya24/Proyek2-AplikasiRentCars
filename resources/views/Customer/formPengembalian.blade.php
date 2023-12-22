@@ -21,7 +21,7 @@
         <main>
             <br>
             <hr>
-            <h1 class="text-center">Formulir Penyewaan</h1>
+            <h1 class="text-center">Formulir Pengembalian</h1>
             <hr>
 
             <!-- content  -->
@@ -31,7 +31,11 @@
                     <br>
                     <form class="row g-3">
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Tanggal Pengambilan</label>
+                            <label for="inputEmail4" class="form-label">Nama Customer</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan lokasi pengambilan">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">Tanggal Pengembalian</label>
                             <input type="date" class="form-control" id="inputEmail4" placeholder="dd/mm/yyyy">
                         </div>
                         <div class="col-md-6">
@@ -77,7 +81,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan email">
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nomor telepon">
                         </div>
                         
                         <hr>
@@ -93,7 +97,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Upload Bukti Pembayaran</label>
-                            <input type="file" class="form-control" id="formFile">
+                            <input type="file" class="form-control" id="formFile" placeholder="Masukkan nomor rekening">
                             <br>
                             {{-- <div class="w-25 ms-0 mb-2">
                             </div> --}}
