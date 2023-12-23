@@ -75,7 +75,7 @@
     @if (session('success'))
         <script>
             Swal.fire({
-                position: 'bottom-end',
+                position: 'center',
                 icon: 'success',
                 title: '{{ session('success') }}',
                 showConfirmButton: false,

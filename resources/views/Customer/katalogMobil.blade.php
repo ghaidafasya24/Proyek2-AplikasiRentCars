@@ -26,13 +26,13 @@
 
             <!-- content  -->
             <div class="w-25 ms-5 mb-2 text-center">
-                <a href="" class="btn btn-secondary ms-5">Kembali</a>   
+                <a href="" class="btn btn-secondary ms-5">Kembali</a>
             </div>
             <div class="row w-100 d-flex justify-content-center align-items-center" style="padding-left: 10em;">
 
-                <div class="card mb-3 col-ms-4" style="max-width: 1000px;">
-                    <div class="row g-0">
-                        @foreach ($mobils as $mobil)
+                @foreach ($mobils as $mobil)
+                    <div class="card mb-3 col-ms-4" style="max-width: 1000px;">
+                        <div class="row g-0">
                             <div class="col-md-4">
                                 <img src="{{ asset('assets/img/mobil/' . $mobil->gambar) }}"
                                     class="img-fluid rounded-start" alt="">
@@ -47,12 +47,12 @@
                                     <a href="{{ route('detailMobil', $mobil->id_mobil) }}" name=""
                                         class="btn btn-primary">Detail</a>
                                 </div>
-                        @endforeach
+                            </div>
+                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
-    </div>
-    </main>
+        </main>
     </div>
     <!-- content end  -->
 
