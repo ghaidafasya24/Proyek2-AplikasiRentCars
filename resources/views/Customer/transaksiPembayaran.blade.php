@@ -21,42 +21,37 @@
         <main>
             <br>
             <hr>
-            <h1 class="text-center">DETAIL MOBIL</h1>
+            <h1 class="text-center">Formulir Penyewaan</h1>
             <hr>
 
             <!-- content  -->
-            <div class="w-25 ms-5 mb-2 text-center">
-                <a href="{{ route('Katalog.Views') }}" class="btn btn-secondary ms-5">Kembali</a>   
-            </div>
             <div class="row w-100 d-flex justify-content-center align-items-center" style="padding-left: 10em;">
                 <div class="card mb-3 col-ms-4" style="max-width: 1000px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="{{ asset('assets/img/mobil/' . $mobil->gambar) }}" class="img-fluid rounded-start"
-                                alt="">
+                    
+                    <br>
+                    <form class="row g-3">
+                        <h4>Pembayaran</h4>
+                        <h6>Silahkan transfer pada rekening berikut : 294xxxxx</h6>
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">Nama Pemegang Kartu</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nama">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $mobil->merek_mobil }}</h5>
-
-                                <h6 class="card-text"> Harga Sewa Perhari :</h6>
-                                <p> Rp. {{ number_format($mobil->harga, 0, ',', '.') }}</p>
-
-                                <h6 class="card-text"> Tahun :</h6>
-                                <p> {{ $mobil->tahun }} </p>
-
-                                <h6 class="card-text"> Warna :</h6>
-                                <p> {{ $mobil->warna }} </p>
-
-                                <h6 class="card-text"> Kapasitas Penumpang :</h6>
-                                <p> {{ $mobil->kapasitas_penumpang }} </p>
-
-
-                                <a href="{{ route('datadiri') }}" class="btn btn-primary">Booking</a>
-                            </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">Nomor Rekening</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nomor rekening">
                         </div>
-                    </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">Upload Bukti Pembayaran</label>
+                            <input type="file" class="form-control" id="formFile">
+                            
+                            <br> 
+                            <a href="{{ route('datadiri') }}" class="btn btn-secondary">Kembali</a>   
+                          <a href="" class="btn btn-primary">Booking Now</a>
+                          <br><br>
+                        </div>
+                    </form>
                 </div>
+                
             </div>
         </main>
     </div>

@@ -78,29 +78,13 @@
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Email</label>
                             <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan email">
+                            <br>
+                            <a href="" class="btn btn-secondary">Kembali</a>   
+                            <a href="{{ route('transaksipembayaran') }}" class="btn btn-primary">Next</a>
                         </div>
                         
                         <hr>
-                        <h4>Pembayaran</h4>
-                        <h6>Silahkan transfer pada rekening berikut : 294xxxxx</h6>
-                        <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Nama Pemegang Kartu</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nama">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Nomor Rekening</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nomor rekening">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Upload Bukti Pembayaran</label>
-                            <input type="file" class="form-control" id="formFile">
-                            <br>
-                            {{-- <div class="w-25 ms-0 mb-2">
-                            </div> --}}
-                            <a href="" class="btn btn-secondary">Kembali</a>   
-                          <a href="" class="btn btn-primary">Booking Now</a>
-                          <br><br>
-                        </div>
+                       
                     </form>
                 </div>
                 

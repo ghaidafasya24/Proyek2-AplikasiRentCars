@@ -14,6 +14,7 @@ use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\riwayattransaksiController;
 use App\Http\Controllers\RiwayatTransaksiController as ControllersRiwayatTransaksiController;
 use App\Http\Controllers\SewaController;
+use App\Http\Controllers\TransaksiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,7 +36,7 @@ Route::get('/', function () {
 // Katalog mobil => daftar mobil
 Route::get('/KatalogMobil', [KatalogController::class, 'views'])->name('Katalog.Views');
 Route::get('/katalogDetail/{id}', [KatalogController::class, 'detailMobil'])->name('detailMobil');
-Route::get('/dataDiri',[CustomerController::class,'booking'])->name('booking');
+Route::get('/dataDiri',[CustomerController::class,'booking'])->name('datadiri');
 
 // Landing page => Login
 Route::get('/SignIn', [LoginController::class, 'signin'])->name('Signin');
@@ -63,7 +64,8 @@ Route::middleware('guest')->group(function () {
     Route::get('/FormPengembalianMobil', [PengembalianController::class, 'formPengembalian'])->name('formPengembalian');
 
     // Data Riwayat Transaksi 
-    Route::get('/RiwayatTransaksi', [RiwayatTransaksiController::class, 'riwayattransaksi'])->name('riwayattransaksi');
+    Route::get('/RiwayatTransaksi', [TransaksiController::class, 'riwayattransaksi'])->name('riwayattransaksi');
+    Route::get('/FormPembayaran', [TransaksiController::class, 'transaksiPembayaran'])->name('transaksipembayaran');
 });
 
 
