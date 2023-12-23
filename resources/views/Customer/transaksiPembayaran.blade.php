@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Transaksi Pembayaran</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="../../assets/css/dashboard.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -27,31 +27,33 @@
             <!-- content  -->
             <div class="row w-100 d-flex justify-content-center align-items-center" style="padding-left: 10em;">
                 <div class="card mb-3 col-ms-4" style="max-width: 1000px;">
-                    
+
                     <br>
                     <form class="row g-3">
                         <h4>Pembayaran</h4>
                         <h6>Silahkan transfer pada rekening berikut : 294xxxxx</h6>
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Nama Pemegang Kartu</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nama">
+                            <label for="nama_pemegang_kartu" class="form-label">Nama </label>
+                            <input type="text" class="form-control" id="nama_pemegang_kartu"
+                                placeholder="Masukkan nama pemegang kartu">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Nomor Rekening</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nomor rekening">
+                            <label for="no_rek" class="form-label">Nomor Rekening</label>
+                            <input type="text" class="form-control" id="no_rek"
+                                placeholder="Masukkan nomor rekening">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Upload Bukti Pembayaran</label>
+                            <label for="bukti_pembayaran" class="form-label">Upload Bukti Pembayaran</label>
                             <input type="file" class="form-control" id="formFile">
-                            
-                            <br> 
-                            <a href="{{ route('datadiri') }}" class="btn btn-secondary">Kembali</a>   
-                          <a href="" class="btn btn-primary">Booking Now</a>
-                          <br><br>
+
+                            <br>
+                            <a href="{{ route('datadiri') }}" class="btn btn-secondary">Kembali</a>
+                            <a href="" class="btn btn-primary">Booking Now</a>
+                            <br><br>
                         </div>
                     </form>
                 </div>
-                
+
             </div>
         </main>
     </div>

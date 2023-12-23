@@ -31,19 +31,19 @@
                     <br>
                     <form class="row g-3">
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Nama Customer</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan lokasi pengambilan">
+                            <label for="nama_customer" class="form-label">Nama Customer</label>
+                            <input type="nama_customer" class="form-control" id="nama_customer" placeholder="Masukkan lokasi pengambilan">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Tanggal Pengembalian</label>
-                            <input type="date" class="form-control" id="inputEmail4" placeholder="dd/mm/yyyy">
+                            <label for="tanggal_pengambilan" class="form-label">Tanggal Pengambilan</label>
+                            <input type="date" class="form-control" id="tanggal_pengembalian" placeholder="dd/mm/yyyy">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Lokasi Pengambilan</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan lokasi pengambilan">
+                            <label for="lokasi_pengembalian" class="form-label">Lokasi Pengambilan</label>
+                            <input type="text" class="form-control" id="lokasi_pengembalian" placeholder="Masukkan lokasi pengambilan">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Tanggal Pengembalian</label>
+                            <label for="tanggal_pengembalian" class="form-label">Tanggal Pengembalian</label>
                             <input type="date" class="form-control" id="inputEmail4" placeholder="dd/mm/yyyy">
                         </div>
                         
@@ -68,20 +68,22 @@
                             <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
+
+
                         <hr>
                         <h4>Data Darurat</h4>
                         
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Nama Rekan Terdekat</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nama lengkap">
+                            <label for="nama_rekan" class="form-label">Nama Rekan</label>
+                            <input type="text" class="form-control" id="nama_rekan" placeholder="Masukkan nama rekan terdekat">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Nomor Telepon</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nomor telepon">
+                            <label for="no_telp_darurat" class="form-label">Nomor Telepon</label>
+                            <input type="text" class="form-control" id="no_telp_darurat" placeholder="Masukkan nomor telepon darurat">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nomor telepon">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Masukkan email darurat">
                         </div>
                         
                         <hr>
