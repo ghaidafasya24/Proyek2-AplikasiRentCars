@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('tanggal_sewa');
             $table->string('tanggal_pengembalian');
             $table->string('waktu_pengembalian');
-            $table->string('lokasi_pengembalian');
+            $table->string('lokasi_pengambilan');
             $table->unsignedBigInteger('id_customer');
             $table->unsignedBigInteger('id_mobil');
             $table->timestamps();

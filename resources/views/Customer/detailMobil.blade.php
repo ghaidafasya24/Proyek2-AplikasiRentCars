@@ -52,7 +52,7 @@
                                 <p> {{ $mobil->kapasitas_penumpang }} </p>
 
 
-                                <a href="{{ route('datadiri') }}" class="btn btn-primary">Booking</a>
+                                <a href="{{ route('datadiri',$mobil->id_mobil) }}" class="btn btn-primary">Booking</a>
                             </div>
                         </div>
                     </div>

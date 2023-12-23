@@ -36,7 +36,7 @@ Route::get('/', function () {
 // Katalog mobil => daftar mobil
 Route::get('/KatalogMobil', [KatalogController::class, 'views'])->name('Katalog.Views');
 Route::get('/katalogDetail/{id}', [KatalogController::class, 'detailMobil'])->name('detailMobil');
-Route::get('/dataDiri',[CustomerController::class,'booking'])->name('datadiri');
+Route::get('/dataDiri/{id}',[CustomerController::class,'booking'])->name('datadiri');
 
 // Landing page => Login
 Route::get('/SignIn', [LoginController::class, 'signin'])->name('Signin');
@@ -57,6 +57,7 @@ Route::middleware('guest')->group(function () {
     
     // Data Customer
     Route::get('/DataCustomer', [CustomerController::class, 'dataCustomer'])->name('datacustomer');
+    Route::post('/AddDataDiri', [CustomerController::class, 'addDataDiri'])->name('add.data.diri');
     Route::get('/DataSewa', [SewaController::class, 'datasewa'])->name('datasewa');
 
     // Data Pengembalian 

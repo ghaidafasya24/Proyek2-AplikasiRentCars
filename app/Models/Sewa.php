@@ -8,11 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Sewa extends Model
 {
     use HasFactory;
+    protected $table = 'sewa';
 
-    protected $primaryKey = 'id_address';
+    protected $primaryKey = 'id_sewa';
 
     protected  $fillable = [
       'tanggal_sewa',
-      'tanggal_pengembalian'
+      'tanggal_pengembalian',
+      'lokasi_pengembalian',
+      'id_customer',
+      'id_mobil',
     ];
 }

@@ -27,60 +27,60 @@
             <!-- content  -->
             <div class="row w-100 d-flex justify-content-center align-items-center" style="padding-left: 10em;">
                 <div class="card mb-3 col-ms-4" style="max-width: 1000px;">
-                    
                     <br>
-                    <form class="row g-3">
+                    <form class="row g-3" action="{{ route('add.data.diri') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Tanggal Pengambilan</label>
-                            <input type="date" class="form-control" id="inputEmail4" placeholder="dd/mm/yyyy">
+                            <input type="date" class="form-control" id="inputEmail4" placeholder="dd/mm/yyyy" name="tanggal_pengambilan">
                         </div>
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Lokasi Pengambilan</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan lokasi pengambilan">
-                        </div>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan lokasi pengambilan" name="lokasi_pengambilan">
+                        </div> --}}
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Tanggal Pengembalian</label>
-                            <input type="date" class="form-control" id="inputEmail4" placeholder="dd/mm/yyyy">
+                            <input type="date" class="form-control" id="inputEmail4" placeholder="dd/mm/yyyy" name="tanggal_pengembalian"> 
                         </div>
                         
                         <h4>Data Diri</h4>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Nama</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nama lengkap">
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nama lengkap" name="nama_customer">
                         </div>
                         <div class="col-md-6">
                           <label for="inputEmail4" class="form-label">No Telp</label>
-                          <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nomor telepon">
+                          <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nomor telepon" name="no_telp">
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan email">
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan email" name="email">
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Upload KTP</label>
-                            <input type="file" class="form-control" id="formFile">
+                            <input type="file" class="form-control" id="formFile" name="ktp">
                         </div>   
                         <div class="col-md-6">
                             <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alamat"></textarea>
                         </div>
                         <hr>
                         <h4>Data Darurat</h4>
                         
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Nama Rekan Terdekat</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nama lengkap">
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nama lengkap" name="nama_orang_terdekat">
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Nomor Telepon</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nomor telepon">
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan nomor telepon" name="no_telp_darurat">
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan email">
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan email" name="email_darurat">
                             <br>
                             <a href="" class="btn btn-secondary">Kembali</a>   
-                            <a href="{{ route('transaksipembayaran') }}" class="btn btn-primary">Next</a>
+                            <button type="submit" class="btn btn-primary">Booking Now</button>
                         </div>
                         
                         <hr>
