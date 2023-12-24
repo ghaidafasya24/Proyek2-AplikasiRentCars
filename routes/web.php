@@ -36,7 +36,7 @@ Route::get('/', function () {
 // Katalog mobil => daftar mobil
 Route::get('/KatalogMobil', [KatalogController::class, 'views'])->name('Katalog.Views');
 Route::get('/katalogDetail/{id}', [KatalogController::class, 'detailMobil'])->name('detailMobil');
-Route::get('/dataDiri/{id}',[CustomerController::class,'booking'])->name('datadiri');
+Route::get('/dataDiri/{id}', [CustomerController::class, 'booking'])->name('datadiri');
 
 // Landing page => Login
 Route::get('/SignIn', [LoginController::class, 'signin'])->name('Signin');
@@ -54,21 +54,23 @@ Route::middleware('guest')->group(function () {
     Route::get('/EditMobil/{id}', [MobilController::class, 'viewEditMobil'])->name('editmobil');
     Route::put('/EditMobilPut/{id}', [MobilController::class, 'EditMobil'])->name('editmobil.put');
     Route::delete('/EditMobilDestroy/{id}', [MobilController::class, 'deleteMobil'])->name('deletemobil');
-    
+
     // Data Customer
     Route::get('/DataCustomer', [CustomerController::class, 'dataCustomer'])->name('datacustomer');
     Route::post('/AddDataDiri', [CustomerController::class, 'addDataDiri'])->name('add.data.diri');
     Route::get('/DataSewa', [SewaController::class, 'datasewa'])->name('datasewa');
     Route::post('/FormSewa', [SewaController::class, 'formSewa'])->name('formsewa');
-    
+
     // Data Pengembalian 
     Route::get('/DataPengembalian', [PengembalianController::class, 'datapengembalian'])->name('datapengembalian');
     Route::get('/FormPengembalianMobil', [PengembalianController::class, 'formPengembalian'])->name('formPengembalian');
-
+    
     // Data Riwayat Transaksi 
     Route::get('/RiwayatTransaksi', [TransaksiController::class, 'riwayattransaksi'])->name('riwayattransaksi');
     Route::get('/FormPembayaran', [TransaksiController::class, 'transaksiPembayaran'])->name('transaksipembayaran');
     Route::post('/Transaksi', [TransaksiController::class, 'transaksi'])->name('transaksi');
+    
+    Route::get('/StrukTransaksi', [CustomerController::class, 'struktransaksi'])->name('struktransaksi');
 });
 
 

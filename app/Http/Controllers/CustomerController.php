@@ -55,4 +55,8 @@ class CustomerController extends Controller
     {
         return view('Admin.DataCustomer.datacustomer');
     }
+
+    public function struktransaksi(){
+        return view('Customer.struk');
+    }
 }
