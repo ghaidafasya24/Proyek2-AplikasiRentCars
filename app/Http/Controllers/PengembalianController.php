@@ -11,6 +11,14 @@ class PengembalianController extends Controller
         return view('Admin.DataPengembalian.datapengembalian');
     }
 
+    public function tambahpengembalianView(){
+        return view('Admin.DataPengembalian.tambahpengembalian');
+    }
+
+    public function editPengembalianView(){
+        return view('Admin.DataPengembalian.editpengembalian');
+    }
+
     public function formPengembalian()
     {
         return view('Customer.formPengembalian');

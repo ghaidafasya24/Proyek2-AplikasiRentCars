@@ -63,6 +63,8 @@ Route::middleware('guest')->group(function () {
 
     // Data Pengembalian 
     Route::get('/DataPengembalian', [PengembalianController::class, 'datapengembalian'])->name('datapengembalian');
+    Route::get('/TambahPengembalian', [PengembalianController::class, 'tambahpengembalianView'])->name('tambahpengembalian');
+    Route::get('/EditPengembalian', [PengembalianController::class, 'editpengembalianView'])->name('editpengembalian');
     Route::get('/FormPengembalianMobil', [PengembalianController::class, 'formPengembalian'])->name('formPengembalian');
     
     // Data Riwayat Transaksi 
