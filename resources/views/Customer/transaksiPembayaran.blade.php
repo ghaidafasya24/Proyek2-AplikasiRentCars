@@ -47,7 +47,7 @@
                             <input type="file" class="form-control" id="formFile">
 
                             <br>
-                            <a href="{{ route('datadiri') }}" class="btn btn-secondary">Kembali</a>
+                            <a href="" class="btn btn-secondary">Kembali</a>
                             <a href="" class="btn btn-primary">Booking Now</a>
                             <br><br>
                         </div>

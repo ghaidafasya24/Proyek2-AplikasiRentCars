@@ -28,66 +28,77 @@
             <div class="row w-100 d-flex justify-content-center align-items-center" style="padding-left: 10em;">
                 <div class="card mb-3 col-ms-4" style="max-width: 1000px;">
                     <br>
-                    <form class="row g-3" action="{{ route('add.data.diri') }}" method="POST" enctype="multipart/form-data">
+                    <form class="row g-3" action="{{ route('add.data.diri') }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="id_mobil" value="{{ $mobil->id_mobil }}">
                         <div class="col-md-6">
                             <label for="tanggal_pengambilan" class="form-label">Tanggal Pengambilan</label>
-                            <input type="date" class="form-control" id="tanggal_pengambilan" placeholder="dd/mm/yyyy" name="tanggal_pengambilan">
+                            <input type="date" class="form-control" id="tanggal_pengambilan" required
+                                placeholder="dd/mm/yyyy" name="tanggal_pengambilan">
                         </div>
-                        {{-- <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Lokasi Pengambilan</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Masukkan lokasi pengambilan" name="lokasi_pengambilan">
-                        </div> --}}
+                        <div class="col-md-6">
+                            <label for="lokasi_pengambilan" class="form-label">Lokasi Pengambilan</label>
+                            <input type="text" class="form-control" id="lokasi_pengambilan" required
+                                placeholder="Masukkan lokasi pengambilan" name="lokasi_pengambilan">
+                        </div>
                         <div class="col-md-6">
                             <label for="tanggal_pengembalian" class="form-label">Tanggal Pengembalian</label>
-                            <input type="date" class="form-control" id="tanggal_pengembalian" placeholder="dd/mm/yyyy" name="tanggal_pengembalian"> 
+                            <input type="date" class="form-control" id="tanggal_pengembalian" required
+                                placeholder="dd/mm/yyyy" name="tanggal_pengembalian">
                         </div>
-                        
+
                         <h4>Data Diri</h4>
                         <div class="col-md-6">
                             <label for="nama" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama lengkap" name="nama_customer">
+                            <input type="text" class="form-control" id="nama" required
+                                placeholder="Masukkan nama lengkap" name="nama_customer">
                         </div>
                         <div class="col-md-6">
-                          <label for="no_telp" class="form-label">No Telp</label>
-                          <input type="text" class="form-control" id="no_telp" placeholder="Masukkan nomor telepon" name="no_telp">
+                            <label for="no_telp" class="form-label">No Telp</label>
+                            <input type="text" class="form-control" id="no_telp" required
+                                placeholder="Masukkan nomor telepon" name="no_telp">
                         </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Masukkan email" name="email">
+                            <input type="email" class="form-control" id="email" required
+                                placeholder="Masukkan email" name="email">
                         </div>
                         <div class="col-md-6">
                             <label for="ktp" class="form-label">Upload KTP</label>
                             <input type="file" class="form-control" id="formFile" name="ktp">
-                        </div>   
+                        </div>
                         <div class="col-md-6">
                             <label for="alamat" class="form-label">Alamat</label>
                             <textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
                         </div>
                         <hr>
                         <h4>Data Darurat</h4>
-                        
+
                         <div class="col-md-6">
                             <label for="nama_rekan" class="form-label">Nama Rekan Terdekat</label>
-                            <input type="text" class="form-control" id="nama_rekan" placeholder="Masukkan nama lengkap" name="nama_orang_terdekat">
+                            <input type="text" class="form-control" id="nama_rekan" required
+                                placeholder="Masukkan nama lengkap" name="nama_orang_terdekat">
                         </div>
                         <div class="col-md-6">
                             <label for="no_telp_darurat" class="form-label">Nomor Telepon</label>
-                            <input type="text" class="form-control" id="no_telp_darurat" placeholder="Masukkan nomor telepon" name="no_telp_darurat">
+                            <input type="text" class="form-control" id="no_telp_darurat" required
+                                placeholder="Masukkan nomor telepon" name="no_telp_darurat">
                         </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Masukkan email" name="email_darurat">
+                            <input type="email" class="form-control" id="email" required
+                                placeholder="Masukkan email" name="email_darurat">
                             <br>
-                            <a href="" class="btn btn-secondary">Kembali</a>   
-                            <button type="submit" class="btn btn-primary" onclick="return window.location.href = '{{ route('transaksipembayaran') }}'">Booking Now</button>
+                            <a href="" class="btn btn-secondary">Kembali</a>
+                            <button type="submit" class="btn btn-primary">Booking Now</button>
                         </div>
-                        
+
                         <hr>
-                       
+
                     </form>
                 </div>
-                
+
             </div>
         </main>
     </div>

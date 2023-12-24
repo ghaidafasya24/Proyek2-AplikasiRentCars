@@ -15,8 +15,13 @@ class Sewa extends Model
     protected  $fillable = [
       'tanggal_sewa',
       'tanggal_pengembalian',
-      'lokasi_pengembalian',
+      'lokasi_pengambilan',
       'id_customer',
       'id_mobil',
     ];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'id_customer');
+    }
 }

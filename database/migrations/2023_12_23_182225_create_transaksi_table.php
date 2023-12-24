@@ -24,11 +24,10 @@ return new class extends Migration
             $table->unsignedBigInteger('id_mobil');
             $table->timestamps();
 
-            $table->foreign('id_customer')->references('id_customer')->on('customer');
+            // $table->foreign('id_customer')->references('id_customer')->on('customer');
             $table->foreign('id_sewa')->references('id_sewa')->on('sewa');
             $table->foreign('id_pengembalian')->references('id_pengembalian')->on('pengembalian');
-            $table->foreign('id_mobil')->references('id_mobil')->on('cars');
-
+            // $table->foreign('id_mobil')->references('id_mobil')->on('cars');
         });
     }
 
