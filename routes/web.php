@@ -59,6 +59,7 @@ Route::middleware('guest')->group(function () {
     Route::get('/DataCustomer', [CustomerController::class, 'dataCustomer'])->name('datacustomer');
     Route::post('/AddDataDiri', [CustomerController::class, 'addDataDiri'])->name('add.data.diri');
     Route::get('/DataSewa', [SewaController::class, 'datasewa'])->name('datasewa');
+    Route::get('/FormSewa', [SewaController::class, 'formSewa'])->name('formsewa');
 
     // Data Pengembalian 
     Route::get('/DataPengembalian', [PengembalianController::class, 'datapengembalian'])->name('datapengembalian');

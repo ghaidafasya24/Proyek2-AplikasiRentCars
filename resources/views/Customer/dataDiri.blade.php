@@ -21,7 +21,7 @@
         <main>
             <br>
             <hr>
-            <h1 class="text-center">Formulir Penyewaan</h1>
+            <h1 class="text-center">Formulir Data Pribadi</h1>
             <hr>
 
             <!-- content  -->
@@ -31,22 +31,7 @@
                     <form class="row g-3" action="{{ route('add.data.diri') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="id_mobil" value="{{ $mobil->id_mobil }}">
-                        <div class="col-md-6">
-                            <label for="tanggal_pengambilan" class="form-label">Tanggal Pengambilan</label>
-                            <input type="date" class="form-control" id="tanggal_pengambilan" required
-                                placeholder="dd/mm/yyyy" name="tanggal_pengambilan">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="lokasi_pengambilan" class="form-label">Lokasi Pengambilan</label>
-                            <input type="text" class="form-control" id="lokasi_pengambilan" required
-                                placeholder="Masukkan lokasi pengambilan" name="lokasi_pengambilan">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="tanggal_pengembalian" class="form-label">Tanggal Pengembalian</label>
-                            <input type="date" class="form-control" id="tanggal_pengembalian" required
-                                placeholder="dd/mm/yyyy" name="tanggal_pengembalian">
-                        </div>
+                    
 
                         <h4>Data Diri</h4>
                         <div class="col-md-6">
@@ -91,7 +76,7 @@
                                 placeholder="Masukkan email" name="email_darurat">
                             <br>
                             <a href="" class="btn btn-secondary">Kembali</a>
-                            <button type="submit" class="btn btn-primary">Booking Now</button>
+                            <button type="submit" class="btn btn-primary">Next</button>
                         </div>
 
                         <hr>
