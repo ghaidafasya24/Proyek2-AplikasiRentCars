@@ -29,26 +29,28 @@
                 <div class="card mb-3 col-ms-4" style="max-width: 1000px;">
 
                     <br>
-                    <form class="row g-3">
+                    <form class="row g-3" action="{{ route('transaksi') }}" method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
                         <h4>Pembayaran</h4>
                         <h6>Silahkan transfer pada rekening berikut : 294xxxxx</h6>
                         <div class="col-md-6">
                             <label for="nama_pemegang_kartu" class="form-label">Nama </label>
                             <input type="text" class="form-control" id="nama_pemegang_kartu"
-                                placeholder="Masukkan nama pemegang kartu">
+                                placeholder="Masukkan nama pemegang kartu" name="nama_pemegang_kartu">
                         </div>
                         <div class="col-md-6">
                             <label for="no_rek" class="form-label">Nomor Rekening</label>
                             <input type="text" class="form-control" id="no_rek"
-                                placeholder="Masukkan nomor rekening">
+                                placeholder="Masukkan nomor rekening" name="no_rek">
                         </div>
                         <div class="col-md-6">
                             <label for="bukti_pembayaran" class="form-label">Upload Bukti Pembayaran</label>
-                            <input type="file" class="form-control" id="formFile">
+                            <input type="file" class="form-control" id="formFile" name="bukti">
 
                             <br>
                             <a href="" class="btn btn-secondary">Kembali</a>
-                            <a href="" class="btn btn-primary">Booking Now</a>
+                            <button type="submit" class="btn btn-primary">Booking Now</button>
                             <br><br>
                         </div>
                     </form>

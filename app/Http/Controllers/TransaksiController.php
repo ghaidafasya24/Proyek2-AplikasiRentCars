@@ -10,7 +10,7 @@ class TransaksiController extends Controller
         return view('Admin.RiwayatTransaksi.riwayattransaksi');
     }
 
-    public function transaksiPembayaran(){
+    public function transaksi(Request $request){
         return view('Customer.transaksiPembayaran');
     }
 }

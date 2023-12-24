@@ -59,8 +59,8 @@ Route::middleware('guest')->group(function () {
     Route::get('/DataCustomer', [CustomerController::class, 'dataCustomer'])->name('datacustomer');
     Route::post('/AddDataDiri', [CustomerController::class, 'addDataDiri'])->name('add.data.diri');
     Route::get('/DataSewa', [SewaController::class, 'datasewa'])->name('datasewa');
-    Route::get('/FormSewa', [SewaController::class, 'formSewa'])->name('formsewa');
-
+    Route::post('/FormSewa', [SewaController::class, 'formSewa'])->name('formsewa');
+    
     // Data Pengembalian 
     Route::get('/DataPengembalian', [PengembalianController::class, 'datapengembalian'])->name('datapengembalian');
     Route::get('/FormPengembalianMobil', [PengembalianController::class, 'formPengembalian'])->name('formPengembalian');
@@ -68,6 +68,7 @@ Route::middleware('guest')->group(function () {
     // Data Riwayat Transaksi 
     Route::get('/RiwayatTransaksi', [TransaksiController::class, 'riwayattransaksi'])->name('riwayattransaksi');
     Route::get('/FormPembayaran', [TransaksiController::class, 'transaksiPembayaran'])->name('transaksipembayaran');
+    Route::post('/Transaksi', [TransaksiController::class, 'transaksi'])->name('transaksi');
 });
 
 

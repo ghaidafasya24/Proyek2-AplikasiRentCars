@@ -28,14 +28,25 @@
             <div class="row w-100 d-flex justify-content-center align-items-center" style="padding-left: 10em;">
                 <div class="card mb-3 col-ms-4" style="max-width: 1000px;">
                     <br>
-                    <form class="row g-3" action="" method="POST"
+                    <form class="row g-3" action="{{ route('formsewa') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="id_mobil" value="">
+                        <input type="hidden" name="id_mobil" value="{{ $mobil->id_mobil }}">
+                        <input type="hidden" name="id_customer" value="{{ $customer->id_customer }}">
                         <div class="col-md-6">
-                            <label for="tanggal_pengambilan" class="form-label">Tanggal Pengambilan</label>
-                            <input type="date" class="form-control" id="tanggal_pengambilan" required
-                                placeholder="dd/mm/yyyy" name="tanggal_pengambilan">
+                            <label for="nama_customer" class="form-label">Nama Customer</label>
+                            <input type="text" class="form-control" id="nama_customer" disabled
+                                 name="nama_customer" value="{{ $customer->nama_customer }}">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="no_telp" class="form-label">No Telpon</label>
+                            <input type="text" class="form-control" id="no_telp" disabled
+                                 name="no_telp" value="{{ $customer->no_telp }}">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="tanggal_sewa" class="form-label">Tanggal Pengambilan</label>
+                            <input type="date" class="form-control" id="tanggal_sewa" required
+                                placeholder="dd/mm/yyyy" name="tanggal_sewa">
                         </div>
                         <div class="col-md-6">
                             <label for="lokasi_pengambilan" class="form-label">Lokasi Pengambilan</label>
@@ -48,7 +59,7 @@
                                 placeholder="dd/mm/yyyy" name="tanggal_pengembalian">
                                 <br>
                                 <a href="" class="btn btn-secondary">Kembali</a>
-                                <button type="submit" class="btn btn-primary">Next</button>
+                                <button type="submit" class="btn btn-primary">Pay</button>
                                 <br><br>
                         </div>
                     </form>

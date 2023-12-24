@@ -31,8 +31,7 @@
                     <form class="row g-3" action="{{ route('add.data.diri') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
-                    
-
+                        <input type="hidden" name="id_mobil" value="{{ $mobil->id_mobil }}">
                         <h4>Data Diri</h4>
                         <div class="col-md-6">
                             <label for="nama" class="form-label">Nama</label>
