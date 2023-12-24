@@ -2,23 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mobil;
 use App\Models\Sewa;
+use Carbon\Carbon;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
 class SewaController extends Controller
 {
-    public function datasewa (){
+    public function datasewa()
+    {
         return view('Admin.DataSewa.datasewa');
     }
 
-    public function formSewa (Request $request){
+    public function formSewa(Request $request)
+    {
         $request->validate([
             'tanggal_sewa' => 'required|date',
             'tanggal_pengembalian' => 'required|date',
             'lokasi_pengambilan' => 'required|string'
         ]);
         $id_mobil = $request->input('id_mobil');
+        $id_customer = $request->input('id_customer');
+        $harga = $request->input('harga');
 
 
         $sewa = [
@@ -30,7 +36,19 @@ class SewaController extends Controller
             'id_customer' => $request->id_customer,
         ];
 
+        $tanggal_sewa = $request->input('tanggal_sewa');
+        $tanggal_pengembalian = $request->input('tanggal_pengembalian');
+        $harga = $request->harga;
+
+        $carbonTanggalPengambilan = Carbon::parse($tanggal_sewa);
+        $carbonTanggalPengembalian = Carbon::parse($tanggal_pengembalian);
+
+        $durasi = $carbonTanggalPengambilan->diffInDays($carbonTanggalPengembalian) + 1;
+
+        $total_pembayaran = $durasi * $harga;
+
         $sewa = Sewa::create($sewa);
-        return view('Customer.transaksiPembayaran',compact('sewa'));
+        $mobil = Mobil::findOrFail($id_mobil);
+        return view('Customer.transaksiPembayaran', compact('sewa', 'mobil','total_pembayaran'));
     }
 }

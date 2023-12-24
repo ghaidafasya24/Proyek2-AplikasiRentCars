@@ -19,7 +19,6 @@ class Transaksi extends Model
         'bukti_pembayaran',
         'total_bayar',
         'id_customer',
-        'id_pengembalian',
         'id_sewa',
         'id_mobil'
     ];

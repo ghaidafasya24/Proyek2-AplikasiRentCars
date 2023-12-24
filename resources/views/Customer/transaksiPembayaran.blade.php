@@ -32,6 +32,12 @@
                     <form class="row g-3" action="{{ route('transaksi') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" value="{{ $sewa->id_sewa }}" name="id_sewa">
+                        <input type="hidden" value="{{ $sewa->id_customer }}" name="id_customer">
+                        <input type="hidden" value="{{ $sewa->id_mobil }}" name="id_mobil">
+                        <input type="hidden" value="{{ $sewa->tanggal_sewa }}" name="tanggal_sewa">
+                        <input type="hidden" value="{{ $sewa->tanggal_pengembalian }}" name="tanggal_pengembalian">
+                        <input type="hidden" value="{{ $mobil->harga }}" name="harga">
                         <h4>Pembayaran</h4>
                         <h6>Silahkan transfer pada rekening berikut : 294xxxxx</h6>
                         <div class="col-md-6">
@@ -40,13 +46,19 @@
                                 placeholder="Masukkan nama pemegang kartu" name="nama_pemegang_kartu">
                         </div>
                         <div class="col-md-6">
+                            <label for="total_harga" class="form-label">Total Pembayaran</label>
+                            <input type="text" class="form-control" id="total_harga"
+                                placeholder="Masukkan nama pemegang kartu" name="total_harga"
+                                value="Rp. {{  number_format($total_pembayaran, 0, ',', '.') }}" disabled>
+                        </div>
+                        <div class="col-md-6">
                             <label for="no_rek" class="form-label">Nomor Rekening</label>
                             <input type="text" class="form-control" id="no_rek"
-                                placeholder="Masukkan nomor rekening" name="no_rek">
+                                placeholder="Masukkan nomor rekening" name="nomor_kartu">
                         </div>
                         <div class="col-md-6">
                             <label for="bukti_pembayaran" class="form-label">Upload Bukti Pembayaran</label>
-                            <input type="file" class="form-control" id="formFile" name="bukti">
+                            <input type="file" class="form-control" id="formFile" name="bukti_pembayaran">
 
                             <br>
                             <a href="" class="btn btn-secondary">Kembali</a>

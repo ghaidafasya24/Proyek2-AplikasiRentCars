@@ -32,6 +32,7 @@
                         enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="id_mobil" value="{{ $mobil->id_mobil }}">
+                        <input type="hidden" name="harga" value="{{ $mobil->harga }}">
                         <input type="hidden" name="id_customer" value="{{ $customer->id_customer }}">
                         <div class="col-md-6">
                             <label for="nama_customer" class="form-label">Nama Customer</label>
