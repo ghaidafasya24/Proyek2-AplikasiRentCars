@@ -13,7 +13,6 @@
                 <form action="{{ route('editmobil.put', $mobil->id_mobil) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Merek Mobil</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1"
@@ -53,7 +52,7 @@
                     <div class="mb-3">
                         <label for="exampleFormControlInput3" class="form-label">Harga</label>
                         <input type="text" class="form-control" id="exampleFormControlInput3"
-                            placeholder="Masukkan warna mobil" name="warna" value="{{ $mobil->harga }}">
+                            placeholder="Masukkan warna mobil" name="harga" value="{{ $mobil->harga }}">
                     </div>
 
                     <hr>

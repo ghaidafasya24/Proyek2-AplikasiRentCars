@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('waktu_pengembalian');
             $table->unsignedBigInteger('id_customer');
             $table->unsignedBigInteger('id_mobil');
+            $table->unsignedBigInteger('id_transaksi');
             $table->timestamps();
+
+            $table->foreign('id_transaksi')->references('id_transaksi')->on('transaksi');
         });
     }
 

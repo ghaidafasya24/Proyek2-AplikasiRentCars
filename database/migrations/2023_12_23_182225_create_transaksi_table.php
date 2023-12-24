@@ -20,13 +20,11 @@ return new class extends Migration
             $table->bigInteger('total_bayar');
             $table->unsignedBigInteger('id_customer');
             $table->unsignedBigInteger('id_sewa');
-            $table->unsignedBigInteger('id_pengembalian');
             $table->unsignedBigInteger('id_mobil');
             $table->timestamps();
 
             // $table->foreign('id_customer')->references('id_customer')->on('customer');
             $table->foreign('id_sewa')->references('id_sewa')->on('sewa');
-            $table->foreign('id_pengembalian')->references('id_pengembalian')->on('pengembalian');
             // $table->foreign('id_mobil')->references('id_mobil')->on('cars');
         });
     }

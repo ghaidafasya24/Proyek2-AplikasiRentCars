@@ -21,4 +21,9 @@ class Mobil extends Model
         'gambar',
         'harga',
     ];
+
+    public function sewa()
+    {
+        return $this->hasMany(Sewa::class, 'id_mobil');
+    }
 }

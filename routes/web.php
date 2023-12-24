@@ -70,7 +70,7 @@ Route::middleware('guest')->group(function () {
     Route::get('/FormPembayaran', [TransaksiController::class, 'transaksiPembayaran'])->name('transaksipembayaran');
     Route::post('/Transaksi', [TransaksiController::class, 'transaksi'])->name('transaksi');
     
-    Route::get('/StrukTransaksi', [CustomerController::class, 'struktransaksi'])->name('struktransaksi');
+    // Route::get('/StrukTransaksi', [CustomerController::class, 'struktransaksi'])->name('struktransaksi');
 });
 
 

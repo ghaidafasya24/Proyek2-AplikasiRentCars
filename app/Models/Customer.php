@@ -22,4 +22,9 @@ class Customer extends Model
         'email_darurat',
         'no_telp_darurat',
     ];
+
+    public function sewa()
+    {
+        return $this->hasMany(Sewa::class, 'id_customer');
+    }
 }

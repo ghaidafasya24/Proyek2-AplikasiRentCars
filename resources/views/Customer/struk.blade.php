@@ -30,15 +30,16 @@
                     <h4>Struk Pembayaran</h4>
                     <h6>
                         <br>
-                        <p>Id Transaksi :</p>
-                        <p>Id Customer :</p>
-                        <p>Id Sewa :</p>
-                        <p>Id Mobil :</p>
-                        <p>Nama Customer :</p>
-                        <p>Merek Mobil :</p>
-                        <p>Tanggal Pengembalian :</p>
-                        <p>Durasi Sewa :</p>
-                        <p>Total Bayar :</p>
+                        <p>Id Transaksi : {{ $transaksi->id_transaksi }}</p>
+                        <p>Id Customer : {{ $transaksi->id_customer }}</p>
+                        <p>Id Sewa : {{ $transaksi->id_sewa }}</p>
+                        <p>Id Mobil : {{ $transaksi->id_mobil }}</p>
+                        <p>Nama Customer : {{ $transaksi->sewa->customer->nama_customer }}</p>
+                        <p>Merek Mobil : {{ $transaksi->sewa->mobil->merek_mobil }}</p>
+                        <p>Tanggal Sewa : {{ $transaksi->sewa->tanggal_sewa }}</p>
+                        <p>Tanggal Pengembalian : {{ $transaksi->sewa->tanggal_pengembalian }}</p>
+                        <p>Durasi Sewa : {{ $transaksi->durasi_sewa }}</p>
+                        <p>Total Bayar : Rp. {{ number_format($transaksi->total_bayar, 0, ',', '.')  }}</p>
                     </h6>
                     <p class="text-center"> - TERIMAKASIH - </p>
 

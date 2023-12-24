@@ -22,4 +22,10 @@ class Transaksi extends Model
         'id_sewa',
         'id_mobil'
     ];
+
+    public function sewa()
+    {
+        return $this->belongsTo(Sewa::class, 'id_sewa');
+    }
+
 }

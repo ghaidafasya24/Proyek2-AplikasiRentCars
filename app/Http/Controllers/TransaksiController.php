@@ -52,5 +52,7 @@ class TransaksiController extends Controller
         ];
 
         $transaksi = Transaksi::create($transaksiAdd);
+
+        return view('Customer.struk',compact('transaksi'))->with('success','Pembayaran Berhasil!!');
     }
 }
