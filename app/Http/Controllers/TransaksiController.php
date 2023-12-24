@@ -10,7 +10,8 @@ class TransaksiController extends Controller
 {
     public function riwayattransaksi()
     {
-        return view('Admin.RiwayatTransaksi.riwayattransaksi');
+        $transaksis = Transaksi::all();
+        return view('Admin.RiwayatTransaksi.riwayattransaksi', compact('transaksis'));
     }
 
     public function transaksi(Request $request)

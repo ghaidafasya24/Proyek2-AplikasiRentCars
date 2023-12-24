@@ -12,9 +12,6 @@
                 <li class="nav-item"><a class="nav-link" href="#portfolio">Cars</a></li>
                 <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                 <li class="nav-item"><a class="nav-link" href="#footer">Contact Us</a></li>
-                <div class="sign">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('Signin') }}">Sign In</a></li>
-                </div>
 
 
                 <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->

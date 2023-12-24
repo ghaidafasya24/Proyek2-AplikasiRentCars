@@ -6,10 +6,6 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Data Customer</h1>
-        <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                                                        For more information about DataTables, please visit the <a target="_blank"
-                                                            href="https://datatables.net">official DataTables documentation</a>.</p> -->
-
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -17,7 +13,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    
+
                     <hr>
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
@@ -34,25 +30,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($mobils as $mobil) --}}
+                            @foreach ($customers as $customer)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Ghaida Fasya</td>
-                                    <td>081908915320</td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $customer->nama_customer }}</td>
+                                    <td>{{ $customer->no_telp }}</td>
                                     <td>
-                                        {{-- <img src="{{ asset('assets/img/mobil/' . $mobil->gambar) }}"
-                                            alt="{{ $mobil->merek_mobil }}" width="50"> --}}
+                                        <img src="{{ asset('assets/img/ktp/' . $customer->ktp) }}"
+                                            alt="{{ $customer->nama_customer }}" width="50">
                                     </td>
-                                    <td>ghaidafasya5@gmail.com</td>
-                                    <td>Bandung Barat</td>
-                                    <td>Serli Pariela</td>
-                                    <td>serlipariela@gmail.com</td>
-                                    <td>0821428489</td>
-
-                                
-
+                                    <td>{{ $customer->email }}</td>
+                                    <td>{{ $customer->alamat }}</td>
+                                    <td>{{ $customer->nama_orang_terdekat }}</td>
+                                    <td>{{ $customer->email_darurat }}</td>
+                                    <td>{{ $customer->no_telp_darurat }}</td>
                                 </tr>
-                            {{-- @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

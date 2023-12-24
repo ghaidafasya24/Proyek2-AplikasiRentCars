@@ -101,6 +101,6 @@ class MobilController extends Controller
     {
         $mobil = Mobil::findOrFail($id);
         $mobil->delete();
-        return redirect()->route('datamobil')->with('success', 'Product deleted successfully.');
+        return redirect()->route('datamobil')->with('success', 'Data Mobil Berhasil Dihapus.');
     }
 }

@@ -7,8 +7,8 @@
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Data Pengembalian</h1>
         <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-            For more information about DataTables, please visit the <a target="_blank"
-                href="https://datatables.net">official DataTables documentation</a>.</p> -->
+                        For more information about DataTables, please visit the <a target="_blank"
+                            href="https://datatables.net">official DataTables documentation</a>.</p> -->
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -33,24 +33,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>12 Desember 2023</td>
-                                <td>07.00</td>
-                                <td>
-                                    <a class="btn btn-warning" href="{{ route('editpengembalian') }}">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-
-                                    <button type="submit" class="btn btn-danger"
-                                        onclick="return confirm('Yakin mau hapus?')">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
+                            @foreach ($pengembalians as $pengembalian)
+                                <tr>
+                                    <td>{{ $pengembalian->id_pengembalian }}</td>
+                                    <td>{{ $pengembalian->id_customer }}</td>
+                                    <td>{{ $pengembalian->id_mobil }}</td>
+                                    <td>{{ $pengembalian->id_transaksi }}</td>
+                                    <td>{{ $pengembalian->tanggal_pengembalian }}</td>
+                                    <td>{{ $pengembalian->waktu_pengembalian }}</td>
+                                    <td>
+                                        <a class="btn btn-warning"
+                                            href="{{ route('editpengembalian', $pengembalian->id_pengembalian) }}">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+                                        <form action="{{ route('deletepengembalian', $pengembalian->id_pengembalian) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <!-- Tombol Delete -->
+                                            <button type="submit" class="btn btn-danger"
+                                                onclick="return confirm('Yakin mau hapus?')"><i
+                                                    class="fa-solid fa-trash"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

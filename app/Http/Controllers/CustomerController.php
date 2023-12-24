@@ -48,15 +48,12 @@ class CustomerController extends Controller
         $mobil = Mobil::findOrFail($id_mobil);
 
 
-        return view('Customer.sewaMobil',compact('customer','mobil'))->with('success', 'Data Customer Berhasil Dibuat.');
+        return view('Customer.sewaMobil', compact('customer', 'mobil'))->with('success', 'Data Customer Berhasil Dibuat.');
     }
 
     public function dataCustomer()
     {
-        return view('Admin.DataCustomer.datacustomer');
+        $customers = Customer::all();
+        return view('Admin.DataCustomer.datacustomer', compact('customers'));
     }
-
-    // public function struktransaksi(){
-    //     return view('Customer.struk');
-    // }
 }

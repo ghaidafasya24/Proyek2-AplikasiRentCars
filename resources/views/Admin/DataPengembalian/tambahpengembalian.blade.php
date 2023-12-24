@@ -4,21 +4,15 @@
 
     <div class="container-fluid">
 
-        <!-- Page Heading -->
-        {{-- <h1 class="h3 mb-2 text-gray-800">Data Mobil</h1> --}}
-        <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p> -->
-
-        <!-- DataTales Example -->
+       
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Tambah Pengembalian</h6>
             </div>
             <div class="card-body">
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('tambahpengembalian.post') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="table-responsive">
-                        @csrf
                         <div class="mb-3">
                             <label for="id_customer" class="form-label">Id Customer</label>
                             <input type="number" class="form-control" id="id_customer" placeholder="Masukkan id customer" name="id_customer">

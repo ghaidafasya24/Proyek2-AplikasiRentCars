@@ -12,7 +12,8 @@ class SewaController extends Controller
 {
     public function datasewa()
     {
-        return view('Admin.DataSewa.datasewa');
+        $sewas = Sewa::all();
+        return view('Admin.DataSewa.datasewa', compact('sewas'));
     }
 
     public function formSewa(Request $request)
