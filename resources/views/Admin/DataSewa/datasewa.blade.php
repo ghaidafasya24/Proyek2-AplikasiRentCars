@@ -24,7 +24,7 @@
                                 <th>TANGGAL SEWA</th>
                                 <th>TANGGAL PENGEMBALIAN</th>
                                 <th>WAKTU SEWA</th>
-                                <th>WAKTU PENGAMBILAN</th>
+                                <th>WAKTU PENGEMBALIAN</th>
                                 <th>LOKASI PENGAMBILAN</th>
                             </tr>
                         </thead>
