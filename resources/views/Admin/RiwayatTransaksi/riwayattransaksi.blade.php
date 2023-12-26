@@ -34,9 +34,9 @@
                                 <tr>
                                     <td>{{ $transaksi->id_transaksi }}</td>
                                     <td>{{ $transaksi->id_customer }}</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ $transaksi->sewa->mobil->merek_mobil }}</td>
+                                    <td>{{ $transaksi->sewa->tanggal_sewa }}</td>
+                                    <td>{{ $transaksi->sewa->tanggal_pengembalian }}</td>
                                     <td>{{ $transaksi->durasi_sewa }} hari</td>
                                     <td>Rp. {{ number_format($transaksi->total_bayar, 0, ',', '.') }}</td>
                                 </tr>
