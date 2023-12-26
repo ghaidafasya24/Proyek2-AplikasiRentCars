@@ -21,7 +21,7 @@
         <main>
             <br>
             <hr>
-            <h1 class="text-center">Formulir Penyewaan</h1>
+            <h1 class="text-center">Formulir Pembayaran</h1>
             <hr>
 
             <!-- content  -->

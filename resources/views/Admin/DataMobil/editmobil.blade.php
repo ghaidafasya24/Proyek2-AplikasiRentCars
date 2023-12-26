@@ -57,7 +57,7 @@
 
                     <hr>
 
-                    <button class="btn btn-success" type="submit">Submit</button>
+                    <button class="btn btn-success" type="submit">Edit</button>
                     <a type="button" class="btn btn-secondary" href="{{ route('datamobil') }}"> Kembali </a>
                 </form>
             </div>

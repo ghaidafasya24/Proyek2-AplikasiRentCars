@@ -56,7 +56,9 @@
                             <label for="alamat" class="form-label">Alamat</label>
                             <textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
                         </div>
+
                         <hr>
+                    
                         <h4>Data Darurat</h4>
 
                         <div class="col-md-6">
@@ -78,7 +80,6 @@
                             <button type="submit" class="btn btn-primary">Next</button>
                         </div>
 
-                        <hr>
 
                     </form>
                 </div>
