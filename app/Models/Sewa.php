@@ -15,6 +15,7 @@ class Sewa extends Model
   protected  $fillable = [
     'tanggal_sewa',
     'tanggal_pengembalian',
+    'waktu_sewa',
     'waktu_pengembalian',
     'lokasi_pengambilan',
     'id_mobil',

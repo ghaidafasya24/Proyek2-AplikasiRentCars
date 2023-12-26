@@ -55,6 +55,16 @@
                                 placeholder="Masukkan lokasi pengambilan" name="lokasi_pengambilan">
                         </div>
                         <div class="col-md-6">
+                            <label for="waktu_sewa" class="form-label">Waktu Sewa</label>
+                            <input type="time" class="form-control" id="waktu_sewa" required
+                                placeholder="Masukkan lokasi sewa" name="waktu_sewa">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="waktu_pengembalian" class="form-label">Waktu Pengembalian</label>
+                            <input type="time" class="form-control" id="waktu_pengembalian" required
+                                placeholder="Masukkan lokasi pengambilan" name="waktu_pengembalian">
+                        </div>
+                        <div class="col-md-6">
                             <label for="tanggal_pengembalian" class="form-label">Tanggal Pengembalian</label>
                             <input type="date" class="form-control" id="tanggal_pengembalian" required
                                 placeholder="dd/mm/yyyy" name="tanggal_pengembalian">

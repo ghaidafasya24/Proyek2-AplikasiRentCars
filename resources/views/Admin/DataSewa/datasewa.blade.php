@@ -22,6 +22,8 @@
                                 <th>ID MOBIL</th>
                                 <th>ID TRANSAKSI</th>
                                 <th>TANGGAL SEWA</th>
+                                <th>TANGGAL PENGEMBALIAN</th>
+                                <th>WAKTU SEWA</th>
                                 <th>WAKTU PENGAMBILAN</th>
                                 <th>LOKASI PENGAMBILAN</th>
                             </tr>
@@ -34,6 +36,8 @@
                                     <td>{{ $sewa->id_mobil }}</td>
                                     <td>{{ $sewa->transaksi->id_transaksi }}</td>
                                     <td>{{ $sewa->tanggal_sewa }}</td>
+                                    <td>{{ $sewa->tanggal_pengembalian }}</td>
+                                    <td>{{ $sewa->waktu_sewa }}</td>
                                     <td>{{ $sewa->waktu_pengembalian }}</td>
                                     <td>{{ $sewa->lokasi_pengambilan }}</td>
                                 </tr>

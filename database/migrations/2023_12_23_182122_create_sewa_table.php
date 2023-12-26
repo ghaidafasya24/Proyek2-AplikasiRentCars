@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id_sewa');
             $table->string('tanggal_sewa');
             $table->string('tanggal_pengembalian');
+            $table->string('waktu_sewa');
             $table->string('waktu_pengembalian');
             $table->string('lokasi_pengambilan');
             $table->unsignedBigInteger('id_customer');

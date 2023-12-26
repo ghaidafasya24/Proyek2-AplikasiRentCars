@@ -21,6 +21,8 @@ class SewaController extends Controller
         $request->validate([
             'tanggal_sewa' => 'required|date',
             'tanggal_pengembalian' => 'required|date',
+            'waktu_sewa' => 'required|string',
+            'waktu_pengembalian' => 'required|string',
             'lokasi_pengambilan' => 'required|string'
         ]);
         $id_mobil = $request->input('id_mobil');
@@ -31,7 +33,8 @@ class SewaController extends Controller
         $sewa = [
             'tanggal_sewa' => $request->tanggal_sewa,
             'tanggal_pengembalian' => $request->tanggal_pengembalian,
-            'waktu_pengembalian' => '14:00',
+            'waktu_sewa' => $request->waktu_sewa,
+            'waktu_pengembalian' => $request->waktu_pengembalian,
             'lokasi_pengambilan' => $request->lokasi_pengambilan,
             'id_mobil' => $request->id_mobil,
             'id_customer' => $request->id_customer,
