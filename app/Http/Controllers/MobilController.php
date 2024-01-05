@@ -93,7 +93,6 @@ class MobilController extends Controller
             'kapasitas_penumpang' => $request->kapasitas_penumpang,
             'harga' => $request->harga,
         ]);
-
         return redirect()->route('datamobil')->with('success', 'Data mobil berhasil diperbarui!');
     }
 

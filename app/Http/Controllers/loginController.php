@@ -11,11 +11,11 @@ class LoginController extends Controller
     {
         return view('Log.Login.login');
     }
-
+    
     public function login(Request $request)
     {
         $credentials = $request->only('username', 'password');
-
+        
         if (Auth::attempt($credentials)) {
             // Jika login berhasil, arahkan ke halaman dashboard atau halaman lainnya
             return redirect()->route('dashboard')->with('success', 'Login berhasil!');

@@ -26,7 +26,7 @@
 
             <!-- content  -->
             <div class="w-25 ms-5 mb-2 text-center">
-                <a href="" class="btn btn-secondary ms-5">Kembali</a>
+                <a href="{{ url('/') }}" class="btn btn-secondary ms-5">Kembali</a>
             </div>
             <div class="row w-100 d-flex justify-content-center align-items-center" style="padding-left: 10em;">
 

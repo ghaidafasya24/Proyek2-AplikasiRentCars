@@ -30,16 +30,89 @@
                     <h4>Struk Pembayaran</h4>
                     <h6>
                         <br>
-                        <p>Id Transaksi : {{ $transaksi->id_transaksi }}</p>
-                        <p>Id Customer : {{ $transaksi->id_customer }}</p>
-                        <p>Id Sewa : {{ $transaksi->id_sewa }}</p>
-                        <p>Id Mobil : {{ $transaksi->id_mobil }}</p>
-                        <p>Nama Customer : {{ $transaksi->sewa->customer->nama_customer }}</p>
-                        <p>Merek Mobil : {{ $transaksi->sewa->mobil->merek_mobil }}</p>
-                        <p>Tanggal Sewa : {{ $transaksi->sewa->tanggal_sewa }}</p>
-                        <p>Tanggal Pengembalian : {{ $transaksi->sewa->tanggal_pengembalian }}</p>
-                        <p>Durasi Sewa : {{ $transaksi->durasi_sewa }}</p>
-                        <p>Total Bayar : Rp. {{ number_format($transaksi->total_bayar, 0, ',', '.')  }}</p>
+                        <table>
+                            <tr >
+                                <td class="p-2">
+                                    id Sewa
+                                </td>
+                                <td class="me-2">:</td>
+                                <td>
+                                    {{ $transaksi->id_sewa }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2">
+                                    Id Customer 
+                                </td>
+                                <td class="me-2"> : </td>
+                                <td>
+                                    {{ $transaksi->id_customer }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2">
+                                    Id Mobi
+                                </td>
+                                <td class="me-2">:</td>
+                                <td>
+                                    {{ $transaksi->id_mobil }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2">
+                                    Nama Customer
+                                </td>
+                                <td class="me-2">:</td>
+                                <td>
+                                    {{ $transaksi->sewa->customer->nama_customer }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2">
+                                    Merek Mobil
+                                </td>
+                                <td class="me-2">:</td>
+                                <td>
+                                    {{ $transaksi->sewa->mobil->merek_mobil }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2">
+                                    Tanggal Sewa
+                                </td>
+                                <td class="me-2">:</td>
+                                <td>
+                                    {{ $transaksi->sewa->tanggal_sewa }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2">
+                                    Tanggal Pengembalian
+                                </td>
+                                <td class="me-2">:</td>
+                                <td>
+                                    {{ $transaksi->sewa->tanggal_pengembalian }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2">
+                                    Durasi Sewa
+                                </td>
+                                <td class="me-2">:</td>
+                                <td>
+                                    {{ $transaksi->durasi_sewa }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2">
+                                    Total Bayar
+                                </td>
+                                <td class="me-2">:</td>
+                                <td>
+                                    Rp. {{ number_format($transaksi->total_bayar, 0, ',', '.') }}
+                                </td>
+                            </tr>
+                        </table>
                     </h6>
                     <p class="text-center"> - TERIMAKASIH - </p>
 

@@ -33,10 +33,6 @@ Route::get('/', function () {
 });
 
 
-// Katalog mobil => daftar mobil
-Route::get('/KatalogMobil', [KatalogController::class, 'views'])->name('Katalog.Views');
-Route::get('/katalogDetail/{id}', [KatalogController::class, 'detailMobil'])->name('detailMobil');
-Route::get('/dataDiri/{id}', [CustomerController::class, 'booking'])->name('datadiri');
 
 
 // Login 
@@ -45,7 +41,8 @@ Route::middleware('guest')->group(function () {
     Route::get('/SignIn', [LoginController::class, 'signin'])->name('Signin');
     Route::post('/login', [LoginController::class, 'login'])->name('Login');
 
-    // Admin 
+
+    // ROLE ADMIN
     Route::get('/DashboardAdmin', [DashboardAdminController::class, 'view'])->name('dashboard');
     // Data Mobil
     Route::get('/DataMobil', [MobilController::class, 'datamobil'])->name('datamobil');
@@ -54,13 +51,10 @@ Route::middleware('guest')->group(function () {
     Route::get('/EditMobil/{id}', [MobilController::class, 'viewEditMobil'])->name('editmobil');
     Route::put('/EditMobilPut/{id}', [MobilController::class, 'EditMobil'])->name('editmobil.put');
     Route::delete('/MobilDestroy/{id}', [MobilController::class, 'deleteMobil'])->name('deletemobil');
-
     // Data Customer
     Route::get('/DataCustomer', [CustomerController::class, 'dataCustomer'])->name('datacustomer');
-    Route::post('/AddDataDiri', [CustomerController::class, 'addDataDiri'])->name('add.data.diri');
+    // Data Sewa 
     Route::get('/DataSewa', [SewaController::class, 'datasewa'])->name('datasewa');
-    Route::post('/FormSewa', [SewaController::class, 'formSewa'])->name('formsewa');
-
     // Data Pengembalian 
     Route::get('/DataPengembalian', [PengembalianController::class, 'datapengembalian'])->name('datapengembalian');
     Route::get('/TambahPengembalian', [PengembalianController::class, 'tambahpengembalianView'])->name('tambahpengembalian');
@@ -69,12 +63,20 @@ Route::middleware('guest')->group(function () {
     Route::put('/EditPengembalianPut/{id}', [PengembalianController::class, 'editpengembalian'])->name('editpengembalian.put');
     Route::delete('/PengembalianDestroy/{id}', [PengembalianController::class, 'deletepengembalian'])->name('deletepengembalian');
     Route::get('/FormPengembalianMobil', [PengembalianController::class, 'formPengembalian'])->name('formPengembalian');
-
+    
     // Data Riwayat Transaksi 
     Route::get('/RiwayatTransaksi', [TransaksiController::class, 'riwayattransaksi'])->name('riwayattransaksi');
+    
+    // ROLE CUSTOMER
+    // Katalog mobil => daftar mobil
+    Route::get('/KatalogMobil', [KatalogController::class, 'views'])->name('Katalog.Views');
+    Route::get('/katalogDetail/{id}', [KatalogController::class, 'detailMobil'])->name('detailMobil');
+    Route::get('/dataDiri/{id}', [CustomerController::class, 'booking'])->name('datadiri');
+    Route::post('/AddDataDiri', [CustomerController::class, 'addDataDiri'])->name('add.data.diri');
+    Route::post('/FormSewa', [SewaController::class, 'formSewa'])->name('formsewa');
     Route::get('/FormPembayaran', [TransaksiController::class, 'transaksiPembayaran'])->name('transaksipembayaran');
+    // 
     Route::post('/Transaksi', [TransaksiController::class, 'transaksi'])->name('transaksi');
-
     // Route::get('/StrukTransaksi', [CustomerController::class, 'struktransaksi'])->name('struktransaksi');
 });
 

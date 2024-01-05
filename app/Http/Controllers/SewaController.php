@@ -29,7 +29,6 @@ class SewaController extends Controller
         $id_customer = $request->input('id_customer');
         $harga = $request->input('harga');
 
-
         $sewa = [
             'tanggal_sewa' => $request->tanggal_sewa,
             'tanggal_pengembalian' => $request->tanggal_pengembalian,
