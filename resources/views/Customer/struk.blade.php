@@ -37,7 +37,7 @@
                                 </td>
                                 <td class="me-2">:</td>
                                 <td>
-                                    {{ $transaksi->id_sewa }}
+                                    {{ $transaksi->id }}
                                 </td>
                             </tr>
                             <tr>
@@ -82,7 +82,7 @@
                                 </td>
                                 <td class="me-2">:</td>
                                 <td>
-                                    {{ $transaksi->sewa->tanggal_sewa }}
+                                    {{date('d-m-Y', strtotime($transaksi->sewa->tanggal_sewa))  }}
                                 </td>
                             </tr>
                             <tr>
@@ -91,7 +91,7 @@
                                 </td>
                                 <td class="me-2">:</td>
                                 <td>
-                                    {{ $transaksi->sewa->tanggal_pengembalian }}
+                                    {{date('d-m-Y', strtotime($transaksi->sewa->tanggal_pengembalian))  }}
                                 </td>
                             </tr>
                             <tr>
