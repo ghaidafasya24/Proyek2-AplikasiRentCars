@@ -72,6 +72,8 @@
     <script src="{{ asset('assets/js/chart-area-demo.js') }}"></script>
     <script src="{{ asset('assets/js/chart-pie-demo.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
     @if (session('success'))
         <script>
             Swal.fire({

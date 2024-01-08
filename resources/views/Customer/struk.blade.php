@@ -31,9 +31,9 @@
                     <h6>
                         <br>
                         <table>
-                            <tr >
+                            <tr>
                                 <td class="p-2">
-                                    id Sewa
+                                    id Transaksi
                                 </td>
                                 <td class="me-2">:</td>
                                 <td>
@@ -42,7 +42,7 @@
                             </tr>
                             <tr>
                                 <td class="p-2">
-                                    Id Customer 
+                                    Id Customer
                                 </td>
                                 <td class="me-2"> : </td>
                                 <td>
@@ -51,7 +51,7 @@
                             </tr>
                             <tr>
                                 <td class="p-2">
-                                    Id Mobi
+                                    Id Mobil
                                 </td>
                                 <td class="me-2">:</td>
                                 <td>

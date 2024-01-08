@@ -48,12 +48,14 @@ class MobilController extends Controller
         return redirect()->route('datamobil')->with('success', 'Data Mobil Berhasil Ditambahkan.');
     }
 
+    // MENAMPILKAN 
     public function viewEditMobil($id)
     {
         $mobil = Mobil::findOrFail($id);
         return view('Admin.DataMobil.editmobil', compact('mobil'));
     }
 
+    // EDIT DATA MOBIL
     public function EditMobil(Request $request, $id)
     {
         $mobil = Mobil::findOrFail($id);
@@ -96,6 +98,7 @@ class MobilController extends Controller
         return redirect()->route('datamobil')->with('success', 'Data mobil berhasil diperbarui!');
     }
 
+    // HAPUS DATA MOBIL
     public function deleteMobil($id)
     {
         $mobil = Mobil::findOrFail($id);
