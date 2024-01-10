@@ -14,6 +14,10 @@ class TransaksiController extends Controller
         return view('Admin.RiwayatTransaksi.riwayattransaksi', compact('transaksis'));
     }
 
+    public function pembayaranTampil(){
+        return view('Customer.KatalogMobil.pembayaran');
+    }
+
     public function transaksi(Request $request)
     {
         $request->validate([

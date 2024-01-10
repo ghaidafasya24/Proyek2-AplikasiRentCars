@@ -11,10 +11,12 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\LoginController as ControllersLoginController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\PengembalianController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\riwayattransaksiController;
 use App\Http\Controllers\RiwayatTransaksiController as ControllersRiwayatTransaksiController;
 use App\Http\Controllers\SewaController;
 use App\Http\Controllers\TransaksiController;
+use App\Models\Transaksi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,10 +65,10 @@ Route::middleware('guest')->group(function () {
     Route::put('/EditPengembalianPut/{id}', [PengembalianController::class, 'editpengembalian'])->name('editpengembalian.put');
     Route::delete('/PengembalianDestroy/{id}', [PengembalianController::class, 'deletepengembalian'])->name('deletepengembalian');
     Route::get('/FormPengembalianMobil', [PengembalianController::class, 'formPengembalian'])->name('formPengembalian');
-    
+
     // Data Riwayat Transaksi 
     Route::get('/RiwayatTransaksi', [TransaksiController::class, 'riwayattransaksi'])->name('riwayattransaksi');
-    
+
     // ROLE CUSTOMER
     // Katalog mobil => daftar mobil
     Route::get('/KatalogMobil', [KatalogController::class, 'views'])->name('Katalog.Views');
@@ -78,6 +80,18 @@ Route::middleware('guest')->group(function () {
     // 
     Route::post('/Transaksi', [TransaksiController::class, 'transaksi'])->name('transaksi');
     // Route::get('/StrukTransaksi', [CustomerController::class, 'struktransaksi'])->name('struktransaksi');
+
+    
+    // MENAMPILKAN HALAMAN REGISTER
+    Route::get('/Register', [RegisterController::class, 'view'])->name('register');
+
+    // ROLE CUSTOMER
+    Route::get('/Katalogmobil', [KatalogController::class, 'tampil'])->name('katalogmobil');
+    Route::get('/BookingMobil', [SewaController::class, 'bookingTampil'])->name('bookingmobil');
+    Route::get('/TransaksiPembayaran', [TransaksiController::class, 'pembayaranTampil'])->name('formpembayaran');
+    Route::get('/ProfileCustomer', [CustomerController::class, 'profile'])->name('profile');
+
+
 });
 
 

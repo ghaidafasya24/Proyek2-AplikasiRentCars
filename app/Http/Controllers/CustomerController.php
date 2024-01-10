@@ -56,4 +56,8 @@ class CustomerController extends Controller
         $customers = Customer::all();
         return view('Admin.DataCustomer.datacustomer', compact('customers'));
     }
+
+    public function profile(){
+        return view('Customer.Profile.profile');
+    }
 }

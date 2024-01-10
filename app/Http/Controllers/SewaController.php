@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 
 class SewaController extends Controller
 {
+
+
+    public function bookingTampil(){
+        return view('Customer.KatalogMobil.booking');
+    }
+
     public function datasewa()
     {
         $sewas = Sewa::all();

@@ -39,7 +39,7 @@
                         <input type="hidden" value="{{ $sewa->tanggal_pengembalian }}" name="tanggal_pengembalian">
                         <input type="hidden" value="{{ $mobil->harga }}" name="harga">
                         <h4>Pembayaran</h4>
-                        <h6>Silahkan transfer pada rekening berikut : 294xxxxx</h6>
+                        <h6>Silahkan transfer pada rekening berikut : 29480946757</h6>
                         <div class="col-md-6">
                             <label for="nama_pemegang_kartu" class="form-label">Nama </label>
                             <input type="text" class="form-control" id="nama_pemegang_kartu"
@@ -49,7 +49,7 @@
                             <label for="total_harga" class="form-label">Total Pembayaran</label>
                             <input type="text" class="form-control" id="total_harga"
                                 placeholder="Masukkan nama pemegang kartu" name="total_harga"
-                                value="Rp. {{  number_format($total_pembayaran, 0, ',', '.') }}" disabled>
+                                value="Rp. {{ number_format($total_pembayaran, 0, ',', '.') }}" disabled>
                         </div>
                         <div class="col-md-6">
                             <label for="no_rek" class="form-label">Nomor Rekening</label>
