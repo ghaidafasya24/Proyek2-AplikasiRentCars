@@ -18,6 +18,10 @@ class TransaksiController extends Controller
         return view('Customer.KatalogMobil.pembayaran');
     }
 
+    public function struk(){
+        return view('Customer.KatalogMobil.strukTransaksi');
+    }
+
     public function transaksi(Request $request)
     {
         $request->validate([

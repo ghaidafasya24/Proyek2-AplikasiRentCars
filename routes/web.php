@@ -89,6 +89,7 @@ Route::middleware('guest')->group(function () {
     Route::get('/Katalogmobil', [KatalogController::class, 'tampil'])->name('katalogmobil');
     Route::get('/BookingMobil', [SewaController::class, 'bookingTampil'])->name('bookingmobil');
     Route::get('/TransaksiPembayaran', [TransaksiController::class, 'pembayaranTampil'])->name('formpembayaran');
+    Route::get('/Struk', [TransaksiController::class, 'struk'])->name('struktransaksi');
     Route::get('/ProfileCustomer', [CustomerController::class, 'profile'])->name('profile');
 
 
