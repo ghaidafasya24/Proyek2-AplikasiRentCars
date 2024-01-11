@@ -10,6 +10,7 @@ use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\LoginController as ControllersLoginController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\riwayattransaksiController;
@@ -91,6 +92,7 @@ Route::middleware('guest')->group(function () {
     Route::get('/BookingMobil', [SewaController::class, 'bookingTampil'])->name('bookingmobil');
     Route::get('/TransaksiPembayaran', [TransaksiController::class, 'pembayaranTampil'])->name('formpembayaran');
     Route::get('/Struk', [TransaksiController::class, 'struk'])->name('struktransaksi');
+    Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
     Route::get('/ProfileCustomer', [CustomerController::class, 'profile'])->name('profile');
 
 
