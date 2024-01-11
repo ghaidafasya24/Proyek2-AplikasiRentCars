@@ -32,7 +32,7 @@
             </div> -->
 
             <!-- Button Katalog Mobil -->
-            <button type="button" class="" onclick="return window.location.href = '{{ route('Katalog.Views') }}'">
+            <button type="button" class="" onclick="return window.location.href = '{{ route('Signin') }}'">
                 KATALOG MOBIL
             </button>
 

@@ -47,7 +47,7 @@
                 </div>
 
                 <p class="signup-link">
-                    Belum memiliki akun? silahkan <a href="">Register</a> disini. 
+                    Belum memiliki akun? silahkan <a href="{{ route('register') }}">Register</a> disini. 
                     <br>
                     <a href="{{ url('/') }}" class="up">Kembali ke halaman utama!</a>
                 </p>

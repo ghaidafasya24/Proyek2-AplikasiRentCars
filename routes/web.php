@@ -35,6 +35,7 @@ Route::get('/', function () {
 });
 
 
+Route::post('/RegisterPost', [RegisterController::class, 'regis'])->name('register.post');
 
 
 // Login 

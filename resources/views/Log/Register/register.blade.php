@@ -26,9 +26,8 @@
             </section>
 
 
-            <form action="{{ route('register') }}" method="POST">
-                @csrf
-
+            <form action="{{ route('register.post') }}" method="POST">
+               @csrf
                 <div class="mid">
                     <div class="input-container">
                         <label for="nama_lengkap"></label>
@@ -55,7 +54,7 @@
                     </div>
                     <div class="input-container">
                         <label for="password"></label>
-                        <input class="input-pwd" name="password" type="password" placeholder="Konfirmasi password"
+                        <input class="input-pwd" name="confirm_password" type="password" placeholder="Konfirmasi password"
                             required>
                     </div>
                     <button type="submit" class="submit">

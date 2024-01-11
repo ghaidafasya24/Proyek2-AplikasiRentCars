@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'ghaida',
             'password' => Hash::make('admin12345'),
             'no_telp' => '081908915320', // Tambahkan kolom role jika perlu
+            'role' => 'admin', // Tambahkan kolom role jika perlu
         ]);
 
         // Tambahkan logika lainnya jika diperlukan
