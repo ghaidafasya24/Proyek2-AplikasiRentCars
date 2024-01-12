@@ -15,28 +15,25 @@ class RegisterController extends Controller
 
     public function regis(Request $request)
     {
-        try {
-            $request->validate([
-                'nama' => 'required|string',
-                'no_telp' => 'required|string',
-                'username' => 'required|string',
-                'password' => 'required|string|confirmed'
-            ]);
+        $request->validate([
+            'nama' => 'required',
+            'username' => 'required',
+            'no_telp' => 'required',
+            'password' => 'required|confirmed'
+        ]);
+        dd($request->all());
 
-            $dataUser = [
-                'nama' => $request->nama,
-                'no_telp' => $request->no_telp,
-                'username' => $request->username,
-                'password' => Hash::make($request->password),
-                'role' => 'customer'
-            ];
 
-            User::create($dataUser);
+        $data['nama'] = $request->name;
+        $data['username'] = $request->username;
+        $data['no_telp'] = $request->no_telp;
+        $data['password'] = Hash::make($request->password);
 
-            return redirect()->route('Signin');
-        } catch (\Exception $e) {
-            // Log or handle the exception
-            return back()->withInput()->withErrors(['error' => 'Registration failed. Please try again.']);
+        $user = User::create($data);
+
+        if (!$user) {
+            return redirect(route('register'))->with('Error', 'Registration failed, try again');
         }
+        return redirect(route('Signin'))->with('Success', 'Registration success!!');
     }
 }

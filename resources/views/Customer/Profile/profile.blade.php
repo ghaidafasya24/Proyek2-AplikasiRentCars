@@ -18,7 +18,7 @@
                         <div class="col-md-6">
                             <label for="nama" class="form-label">Nama</label>
                             <input type="text" class="form-control" id="nama" required
-                                placeholder="Masukkan nama lengkap" name="nama_customer">
+                                placeholder="Masukkan nama lengkap" name="nama_customer" value="{{ Auth::user()->nama }}">
                         </div>
                         <br>
                         <div class="col-md-6">

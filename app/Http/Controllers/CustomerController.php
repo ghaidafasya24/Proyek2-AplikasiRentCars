@@ -6,6 +6,7 @@ use App\Models\Customer;
 use App\Models\Mobil;
 use App\Models\Sewa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
@@ -57,7 +58,8 @@ class CustomerController extends Controller
         return view('Admin.DataCustomer.datacustomer', compact('customers'));
     }
 
-    public function profile(){
+    public function profile()
+    {
         return view('Customer.Profile.profile');
     }
 }

@@ -24,6 +24,14 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin', // Tambahkan kolom role jika perlu
         ]);
 
+        User::create([
+            'nama_admin' => 'M Fachriza Farhan',
+            'username' => 'ichika',
+            'password' => Hash::make('admin12345'),
+            'no_telp' => '081908915320', // Tambahkan kolom role jika perlu
+            'role' => 'customer', // Tambahkan kolom role jika perlu
+        ]);
+
         // Tambahkan logika lainnya jika diperlukan
     }
 }

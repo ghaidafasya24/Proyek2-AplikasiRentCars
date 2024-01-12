@@ -11,15 +11,16 @@ class LoginController extends Controller
     {
         return view('Log.Login.login');
     }
-    
+
     public function login(Request $request)
     {
         $credentials = $request->only('username', 'password');
-        
+
         if (Auth::attempt($credentials)) {
-            if(Auth::user()->role == 'admin'){
+            if (Auth::user()->role == 'admin') {
                 return redirect()->route('dashboard')->with('success', 'Login berhasil!');
             } else {
+                // dd(Auth::user()->nama);
                 return redirect()->route('katalogmobil')->with('success', 'Login berhasil!');
             }
             // Jika login berhasil, arahkan ke halaman dashboard atau halaman lainnya
@@ -27,5 +28,11 @@ class LoginController extends Controller
             // Jika login gagal, kembali ke halaman login dengan pesan error
             return redirect()->route('Signin')->with('error', 'Login gagal. Periksa kembali username dan password.');
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/'); // Redirect ke halaman utama atau halaman lain yang Anda inginkan.
     }
 }

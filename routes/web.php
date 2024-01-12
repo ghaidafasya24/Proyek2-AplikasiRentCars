@@ -35,15 +35,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::middleware('auth')->group(function (){
+});
 Route::post('/RegisterPost', [RegisterController::class, 'regis'])->name('register.post');
+Route::post('/login', [LoginController::class, 'login'])->name('Login');
 
 
 // Login 
 Route::middleware('guest')->group(function () {
     // Landing page => Login
     Route::get('/SignIn', [LoginController::class, 'signin'])->name('Signin');
-    Route::post('/login', [LoginController::class, 'login'])->name('Login');
 
 
     // ROLE ADMIN
@@ -83,7 +84,7 @@ Route::middleware('guest')->group(function () {
     Route::post('/Transaksi', [TransaksiController::class, 'transaksi'])->name('transaksi');
     // Route::get('/StrukTransaksi', [CustomerController::class, 'struktransaksi'])->name('struktransaksi');
 
-    
+
     // MENAMPILKAN HALAMAN REGISTER
     Route::get('/Register', [RegisterController::class, 'view'])->name('register');
 
@@ -92,10 +93,11 @@ Route::middleware('guest')->group(function () {
     Route::get('/BookingMobil', [SewaController::class, 'bookingTampil'])->name('bookingmobil');
     Route::get('/TransaksiPembayaran', [TransaksiController::class, 'pembayaranTampil'])->name('formpembayaran');
     Route::get('/Struk', [TransaksiController::class, 'struk'])->name('struktransaksi');
-    Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
     Route::get('/ProfileCustomer', [CustomerController::class, 'profile'])->name('profile');
 
+    // routes/web.php
 
+    Route::get('/logout', [loginController::class,'logout'])->name('logout');
 });
 
 
