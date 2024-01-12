@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         // Buat akun admin
         User::create([
-            'nama_admin' => 'Ghaida Fasya Yuthika Afifah',
+            'nama' => 'Ghaida Fasya Yuthika Afifah',
             'username' => 'ghaida',
             'password' => Hash::make('admin12345'),
             'no_telp' => '081908915320', // Tambahkan kolom role jika perlu
@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'nama_admin' => 'M Fachriza Farhan',
+            'nama' => 'M Fachriza Farhan',
             'username' => 'ichika',
             'password' => Hash::make('admin12345'),
             'no_telp' => '081908915320', // Tambahkan kolom role jika perlu
