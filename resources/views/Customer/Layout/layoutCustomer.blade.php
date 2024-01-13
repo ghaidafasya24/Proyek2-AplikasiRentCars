@@ -37,11 +37,11 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        @include('Customer.Layout.sidebarCustomer')
+        @include('Admin.Layout.sidebar')
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
-                @include('Customer.Layout.navbarCustomer')
+                @include('Admin.Layout.navbar')
                 <!-- Begin Page Content -->
                 @yield('content')
                 <!-- Footer -->

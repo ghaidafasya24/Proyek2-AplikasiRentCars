@@ -20,6 +20,7 @@ class Mobil extends Model
         'kapasitas_penumpang',
         'gambar',
         'harga',
+        'stok',
     ];
 
     public function sewa()

@@ -60,8 +60,11 @@
                             <input type="text" class="form-control" id="exampleFormControlInput3"
                                 placeholder="Masukkan harga sewa" name="harga">
                         </div>
-
-
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput3" class="form-label">Stok</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput3"
+                                placeholder="Masukkan stok ketersediaan" name="stok">
+                        </div>
                     </div>
                     <button class="btn btn-success" type="submit">Submit</button>
                     <a type="button" class="btn btn-secondary" href="{{ route('datamobil') }}"> Kembali </a>

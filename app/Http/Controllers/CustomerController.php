@@ -18,26 +18,22 @@ class CustomerController extends Controller
 
     public function addDataDiri(Request $request)
     {
-        $request->validate([
-            'nama_customer' => 'required|max:255',
-            'no_telp' => 'required|numeric',
-            'ktp' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'email' => 'required',
-            'alamat' => 'required|max:255',
-            'nama_orang_terdekat' => 'required|max:255',
-            'email_darurat' => 'required|max:255',
-            'no_telp_darurat' => 'required|numeric',
-        ]);
 
-        $id_mobil = $request->input('id_mobil');
+        $request->validate([
+            'email' => 'required',
+            'nama_orang_terdekat' => 'required',
+            'email_darurat' => 'required',
+            'no_telp_darurat' => 'required',
+            'ktp' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'alamat' => 'string'
+        ]);
 
         $image = $request->file('ktp');
         $imageName = time() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('assets/img/ktp'), $imageName);
 
-        $addDataDiri = [
-            'nama_customer' => $request->nama_customer,
-            'no_telp' => $request->no_telp,
+        $customerData = [
+            'id_user' => Auth::user()->id_user,
             'ktp' => $imageName,
             'email' => $request->email,
             'alamat' => $request->alamat,
@@ -45,11 +41,11 @@ class CustomerController extends Controller
             'email_darurat' => $request->email_darurat,
             'no_telp_darurat' => $request->no_telp_darurat,
         ];
-        $customer = Customer::create($addDataDiri);
-        $mobil = Mobil::findOrFail($id_mobil);
 
+        // Simpan data ke dalam tabel 'customer'
+        Customer::create($customerData);
 
-        return view('Customer.sewaMobil', compact('customer', 'mobil'))->with('success', 'Data Customer Berhasil Dibuat.');
+        return redirect()->route('home')->with('success', 'Data Customer Berhasil Dibuat.');
     }
 
     public function dataCustomer()
@@ -60,6 +56,43 @@ class CustomerController extends Controller
 
     public function profile()
     {
-        return view('Customer.Profile.profile');
+        $user = Auth::user();
+        $profile = $user->customer;
+        return view('Customer.Profile.profile', compact('profile'));
+    }
+
+    public function addProfile(Request $request)
+    {
+        try {
+
+            $request->validate([
+                'email' => 'required',
+                'nama_orang_terdekat' => 'required',
+                'email_darurat' => 'required',
+                'no_telp_darurat' => 'required',
+                'ktp' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'alamat' => 'string'
+            ]);
+
+            $image = $request->file('ktp');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('assets/img/ktp'), $imageName);
+
+            $customerData = [
+                'id_user' => Auth::user()->id_user,
+                'ktp' => $imageName,
+                'email' => $request->email,
+                'alamat' => $request->alamat,
+                'nama_orang_terdekat' => $request->nama_orang_terdekat,
+                'email_darurat' => $request->email_darurat,
+                'no_telp_darurat' => $request->no_telp_darurat,
+            ];
+
+            dd($customerData);
+            // Simpan data ke dalam tabel 'customer'
+            $test = Customer::create($customerData);
+        } catch (\Exception $e) {
+            return redirect()->route('profile')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 }

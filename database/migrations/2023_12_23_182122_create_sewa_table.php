@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('lokasi_pengambilan');
             $table->unsignedBigInteger('id_customer');
             $table->unsignedBigInteger('id_mobil');
+            $table->bigInteger('stok');
             $table->timestamps();
 
             $table->foreign('id_customer')->references('id_customer')->on('customer');

@@ -5,73 +5,68 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="card text-center">
-                
+
                 <div class="card-body">
                     <div class="card-header">
                         <h4>Rent-Cars</h4>
                         Jalan Sari Jadi No. 4 | Nomor Telp 081908915320
-                      </div>
-                      <br>
-                  <h5 class="card-title text-left">Struk Pembayaran</h5>
-                  <hr>
-                  
-                  {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
-                  <table>
-                    <tr>
-                        <td class="">Id Transaksi</td>
-                        <td class="p-2"> : </td>
-                        <td> 1 </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Id Customer</td>
-                        <td class="p-2"> : </td>
-                        <td> 1 </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Id Sewa</td>
-                        <td class="p-2"> : </td>
-                        <td> 1 </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Id Mobil</td>
-                        <td class="p-2"> : </td>
-                        <td> 1 </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Nama Customer</td>
-                        <td class="p-2"> : </td>
-                        <td> Ghaida </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Merek Mobil</td>
-                        <td class="p-2"> : </td>
-                        <td> Pajero Sport</td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Tanggal Sewa</td>
-                        <td class="p-2"> : </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Tanggal Pengembalian</td>
-                        <td class="p-2"> : </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Durasi Sewa</td>
-                        <td class="p-2"> : </td>
-                        <td> 2 hari </td>
-                    </tr>
-                    <tr>
-                        <td class="p-2">Total Bayar :</td>
-                        <td class="p-2"> : </td>
-                        <td> Rp.  </td>
-                    </tr>
-                </table>
-                <p class="text-center"> - TERIMAKASIH - </p>
-                <hr>
-                {{-- <a href="#" class="btn btn-secondary">Kembali ke halaman utama</a> --}}
-                <a href="#" class="btn btn-success">Download pdf</a>
+                    </div>
+                    <br>
+                    <h5 class="card-title text-left">Struk Pembayaran</h5>
+                    <hr>
+
+                    {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                    <table>
+                        <tr>
+                            <td class="">Id Transaksi</td>
+                            <td class="p-2"> : </td>
+                            <td> {{ $transaksi->id }} </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">Id Customer</td>
+                            <td class="p-2"> : </td>
+                            <td> {{ $transaksi->id_customer }} </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">Id Mobil</td>
+                            <td class="p-2"> : </td>
+                            <td> {{ $transaksi->id_mobil }} </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">Nama Customer</td>
+                            <td class="p-2"> : </td>
+                            <td> {{ $transaksi->sewa->customer->user->nama}} </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">Merek Mobil</td>
+                            <td class="p-2"> : </td>
+                            <td> {{ $transaksi->sewa->mobil->merek_mobil }}</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">Tanggal Sewa</td>
+                            <td class="p-2"> : </td>
+                            <td> {{date('d-m-Y', strtotime($transaksi->sewa->tanggal_sewa))  }} </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">Tanggal Pengembalian</td>
+                            <td class="p-2"> : </td>
+                            <td> {{date('d-m-Y', strtotime($transaksi->sewa->tanggal_pengembalian))  }} </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">Durasi Sewa</td>
+                            <td class="p-2"> : </td>
+                            <td>  {{ $transaksi->durasi_sewa }} hari </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">Total Bayar :</td>
+                            <td class="p-2"> : </td>
+                            <td> Rp. {{ number_format($transaksi->total_bayar, 2, ',', '.') }}</td>
+                        </tr>
+                    </table>
+                    <p class="text-center"> - TERIMAKASIH - </p>
+                    <hr>
+                    {{-- <a href="#" class="btn btn-secondary">Kembali ke halaman utama</a> --}}
+                    <a href="#" class="btn btn-success">Download pdf</a>
                 </div>
                 {{-- <div class="card-footer text-muted">
                     2 days ago
@@ -180,4 +175,4 @@
     </div>
     <!-- content end  -->
 
-    @endsection
+@endsection

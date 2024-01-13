@@ -54,6 +54,11 @@
                         <input type="text" class="form-control" id="exampleFormControlInput3"
                             placeholder="Masukkan warna mobil" name="harga" value="{{ $mobil->harga }}">
                     </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput3" class="form-label">Stok</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput3"
+                            placeholder="Masukkan stok ketersediaan" name="stok" value="{{ $mobil->stok }}">
+                    </div>
 
                     <hr>
 

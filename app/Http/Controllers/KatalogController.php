@@ -10,15 +10,9 @@ class KatalogController extends Controller
     public function views()
     {
         $mobils = Mobil::all();
-        return view('Customer.katalogMobil', compact('mobils'));
-    }
-
-    // MENAMPILKAN HALAMAN KATALOG MOBIL
-    public function tampil(){
-        $mobils = Mobil::all();
-
         return view('Customer.KatalogMobil.katalogMobil', compact('mobils'));
     }
+
 
     public function detailMobil($id)
     {

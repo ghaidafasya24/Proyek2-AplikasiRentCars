@@ -28,6 +28,7 @@ class MobilController extends Controller
             'kapasitas_penumpang' => 'required|numeric',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'harga' => 'required|string|max:255',
+            'stok' => 'required|numeric',
         ]);
 
         $image = $request->file('gambar');
@@ -40,7 +41,8 @@ class MobilController extends Controller
             'warna' => $request->warna,
             'kapasitas_penumpang' => $request->kapasitas_penumpang,
             'gambar' => $imageName,
-            'harga' => $request->harga
+            'harga' => $request->harga,
+            'stok' => $request->stok,
         ];
 
         Mobil::create($dataMobil);
@@ -67,6 +69,7 @@ class MobilController extends Controller
             'kapasitas_penumpang' => 'required|numeric',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'harga' => 'required|string|max:255',
+            'stok' => 'required|numeric',
         ]);
 
         // Mengecek apakah ada file gambar baru diunggah
@@ -94,6 +97,7 @@ class MobilController extends Controller
             'warna' => $request->warna,
             'kapasitas_penumpang' => $request->kapasitas_penumpang,
             'harga' => $request->harga,
+            'stok' => $request->stok,
         ]);
         return redirect()->route('datamobil')->with('success', 'Data mobil berhasil diperbarui!');
     }

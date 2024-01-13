@@ -1,23 +1,13 @@
 <?php
 
 use App\Http\Controllers\customerController;
-use App\Http\Controllers\DashboardAdminController;
-use App\Http\Controllers\dashboardController;
-use App\Http\Controllers\datamobilController;
-use App\Http\Controllers\datapengembalianController;
-use App\Http\Controllers\datasewaController;
 use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\loginController;
-use App\Http\Controllers\LoginController as ControllersLoginController;
 use App\Http\Controllers\MobilController;
-use App\Http\Controllers\PDFController;
 use App\Http\Controllers\PengembalianController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\riwayattransaksiController;
-use App\Http\Controllers\RiwayatTransaksiController as ControllersRiwayatTransaksiController;
 use App\Http\Controllers\SewaController;
 use App\Http\Controllers\TransaksiController;
-use App\Models\Transaksi;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Auth::routes();
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,18 +29,15 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function (){
 });
-Route::post('/RegisterPost', [RegisterController::class, 'regis'])->name('register.post');
-Route::post('/login', [LoginController::class, 'login'])->name('Login');
+Route::get('/SignIn', [loginController::class, 'signin'])->name('Signin');
 
 
 // Login 
-Route::middleware('guest')->group(function () {
+Route::middleware('auth')->group(function () {
     // Landing page => Login
-    Route::get('/SignIn', [LoginController::class, 'signin'])->name('Signin');
 
 
     // ROLE ADMIN
-    Route::get('/DashboardAdmin', [DashboardAdminController::class, 'view'])->name('dashboard');
     // Data Mobil
     Route::get('/DataMobil', [MobilController::class, 'datamobil'])->name('datamobil');
     Route::get('/TambahMobil', [MobilController::class, 'viewCreateMobil'])->name('tambahmobil');
@@ -85,12 +74,9 @@ Route::middleware('guest')->group(function () {
     // Route::get('/StrukTransaksi', [CustomerController::class, 'struktransaksi'])->name('struktransaksi');
 
 
-    // MENAMPILKAN HALAMAN REGISTER
-    Route::get('/Register', [RegisterController::class, 'view'])->name('register');
-
     // ROLE CUSTOMER
     Route::get('/Katalogmobil', [KatalogController::class, 'tampil'])->name('katalogmobil');
-    Route::get('/BookingMobil', [SewaController::class, 'bookingTampil'])->name('bookingmobil');
+    Route::get('/BookingMobil/{id}', [SewaController::class, 'bookingTampil'])->name('bookingmobil');
     Route::get('/TransaksiPembayaran', [TransaksiController::class, 'pembayaranTampil'])->name('formpembayaran');
     Route::get('/Struk', [TransaksiController::class, 'struk'])->name('struktransaksi');
     Route::get('/ProfileCustomer', [CustomerController::class, 'profile'])->name('profile');
@@ -103,3 +89,6 @@ Route::middleware('guest')->group(function () {
 
 // Customer 
 // Route::get('/step1',[customerController::class,'step1'])->name('step1');
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

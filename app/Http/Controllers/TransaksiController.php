@@ -24,28 +24,25 @@ class TransaksiController extends Controller
 
     public function transaksi(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'nama_pemegang_kartu' => 'required|string',
             'nomor_kartu' => 'required|numeric',
             'bukti_pembayaran' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $id_mobil = $request->input('id_mobil');
-        $id_sewa = $request->input('id_sewa');
-        $id_customer = $request->input('id_customer');
+        $id_mobil = $request->id_mobil;
+        $id_sewa = $request->id_sewa;
+        $id_customer = $request->id_customer;
+        $harga = $request->harga;
+
+        $durasi = $request->durasi;
+
 
         $image = $request->file('bukti_pembayaran');
         $imageName = time() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('assets/img/bukti_pembayaran'), $imageName);
 
-        $tanggal_sewa = $request->input('tanggal_sewa');
-        $tanggal_pengembalian = $request->input('tanggal_pengembalian');
-        $harga = $request->harga;
-
-        $carbonTanggalPengambilan = Carbon::parse($tanggal_sewa);
-        $carbonTanggalPengembalian = Carbon::parse($tanggal_pengembalian);
-
-        $durasi = $carbonTanggalPengambilan->diffInDays($carbonTanggalPengembalian) + 1;
 
         $total_pembayaran = $durasi * $harga;
 
@@ -60,8 +57,10 @@ class TransaksiController extends Controller
             'id_mobil' => $id_mobil,
         ];
 
+        // dd($transaksiAdd);
+
         $transaksi = Transaksi::create($transaksiAdd);
         // dd($transaksi);
-        return view('Customer.struk',compact('transaksi'))->with('success','Pembayaran Berhasil!!');
+        return view('Customer.KatalogMobil.strukTransaksi',compact('transaksi'))->with('success','Pembayaran Berhasil!!');
     }
 }

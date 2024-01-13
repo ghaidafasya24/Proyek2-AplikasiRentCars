@@ -26,7 +26,7 @@
             </section>
 
 
-            <form action="{{ route('Login') }}" method="POST">
+            <form action="{{ route('login') }}" method="POST">
                 @csrf
                 
                 <div class="mid">

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('harga');
             $table->string('kapasitas_penumpang');
             $table->string('gambar');
+            $table->bigInteger('stok');
             $table->timestamps();
         });
     }

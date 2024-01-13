@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('alamat');
             $table->string('nama_orang_terdekat');
             $table->string('email_darurat');
-            $table->bigInteger('no_telp_darurat');
+            $table->string('no_telp_darurat');
             $table->timestamps();
 
             $table->foreign('id_user')->references('id_user')->on('users');

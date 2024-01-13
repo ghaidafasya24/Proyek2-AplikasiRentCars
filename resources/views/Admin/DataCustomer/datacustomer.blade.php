@@ -33,8 +33,8 @@
                             @foreach ($customers as $customer)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $customer->nama_customer }}</td>
-                                    <td>{{ $customer->no_telp }}</td>
+                                    <td>{{ $customer->user->nama }}</td>
+                                    <td>{{ $customer->user->no_telp }}</td>
                                     <td>
                                         <img src="{{ asset('assets/img/ktp/' . $customer->ktp) }}"
                                             alt="{{ $customer->nama_customer }}" width="50">

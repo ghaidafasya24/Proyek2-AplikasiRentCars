@@ -26,7 +26,7 @@
             </section>
 
 
-            <form action="{{ route('register.post') }}" method="POST">
+            <form action="{{ route('register') }}" method="POST">
                @csrf
                 <div class="mid">
                     <div class="input-container">

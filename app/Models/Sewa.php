@@ -20,6 +20,7 @@ class Sewa extends Model
     'lokasi_pengambilan',
     'id_mobil',
     'id_customer',
+    'stok'
   ];
 
   public function customer()

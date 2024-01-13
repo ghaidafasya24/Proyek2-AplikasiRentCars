@@ -29,6 +29,7 @@
                                 <th>WARNA</th>
                                 <th>KAPASITAS PENUMPANG</th>
                                 <th>FOTO</th>
+                                <th>STOK</th>
                                 <th>HARGA</th>
                                 <th>AKSI</th>
                             </tr>
@@ -43,8 +44,9 @@
                                     <td>{{ $mobil->kapasitas_penumpang }}</td>
                                     <td>
                                         <img src="{{ asset('assets/img/mobil/' . $mobil->gambar) }}"
-                                            alt="{{ $mobil->merek_mobil }}" width="50">
+                                        alt="{{ $mobil->merek_mobil }}" width="50">
                                     </td>
+                                    <td>{{ $mobil->stok }}</td>
                                     <td>Rp. {{ number_format($mobil->harga, 0, ',', '.') }}</td>
 
                                     <td class="d-flex justify-content-center align-items-center">
