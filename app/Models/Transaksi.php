@@ -28,4 +28,8 @@ class Transaksi extends Model
         return $this->belongsTo(Sewa::class, 'id_sewa');
     }
 
+    public function pengembalian()
+    {
+        return $this->hasMany(Pengembalian::class, 'id_sewa');
+    }
 }

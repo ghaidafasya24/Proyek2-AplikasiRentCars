@@ -37,4 +37,9 @@ class Sewa extends Model
   {
     return $this->hasOne(Transaksi::class, 'id_sewa');
   }
+
+  public function pengembalian()
+  {
+    return $this->hasMany(Pengembalian::class, 'id_sewa');
+  }
 }

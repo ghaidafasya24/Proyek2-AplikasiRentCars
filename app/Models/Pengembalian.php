@@ -13,10 +13,12 @@ class Pengembalian extends Model
     protected $primaryKey = 'id_pengembalian';
 
     protected $fillable = [
-        'tanggal_pengembalian',
-        'waktu_pengembalian',
-        'id_customer',
-        'id_mobil',
         'id_transaksi',
+        'jumlah'
     ];
+
+    public function sewa()
+    {
+        return $this->hasMany(Sewa::class, 'id_sewa');
+    }
 }
