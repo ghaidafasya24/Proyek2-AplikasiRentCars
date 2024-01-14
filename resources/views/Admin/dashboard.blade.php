@@ -2,10 +2,8 @@
 
 @if (Auth::user()->role == 'admin')
     @section('title', 'Dashboard Admin')
-
 @elseif(Auth::user()->role == 'customer')
     @section('title', 'Customer')
-
 @endif
 @section('content')
 
@@ -34,7 +32,7 @@
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $mobil }}</div>
                                 </div>
                                 <div class="col-auto">
-                                     <i class="fa-solid fa-car"></i>
+                                    <i class="fa-solid fa-car"></i>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +57,7 @@
                     </div>
                 </div>
 
-                
+
 
                 {{-- DATA PENGEMBALIAN  --}}
                 <div class="col-xl-3 col-md-6 mb-4">
@@ -178,8 +176,12 @@
                                 @if ($mobil->stok <= 0)
                                     <button class='btn btn-secondary disabled'>Tidak Tersedia</button>
                                 @else
-                                    <a href="{{ route('bookingmobil', $mobil->id_mobil) }}"
-                                        class="btn btn-primary">Booking</a>
+                                    @if (isset($customerDataExists) && $customerDataExists)
+                                        <a href="{{ route('bookingmobil', $mobil->id_mobil) }}"
+                                            class="btn btn-primary">Booking</a>
+                                    @else
+                                        <button class="btn btn-primary" onclick="showNotif()">Booking</button>
+                                    @endif
                                 @endif
                             </div>
                         </div>
@@ -191,3 +193,13 @@
 
 
 @endsection
+
+<script>
+    function showNotif() {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Lengkapi data diri Anda sebelum melakukan pemesanan.',
+        });
+    }
+</script>

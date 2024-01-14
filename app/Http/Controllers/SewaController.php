@@ -16,9 +16,9 @@ class SewaController extends Controller
     {
         $mobil = Mobil::findOrFail($id);
         $user = Auth::user();
-        
+
         $customer = $user->customer;
-        return view('Customer.KatalogMobil.booking', compact('mobil','customer'));
+        return view('Customer.KatalogMobil.booking', compact('mobil', 'customer'));
     }
 
     public function datasewa()
@@ -55,9 +55,13 @@ class SewaController extends Controller
             'stok' => $request->jumlah
         ];
 
+        if (!$this->checkCustomerData($request->id_customer)) {
+            return redirect()->back()->with('error', 'Lengkapi data diri terlebih dahulu');
+        }
+
         $tanggal_sewa = $request->input('tanggal_sewa');
         $tanggal_pengembalian = $request->input('tanggal_pengembalian');
-        
+
 
         $carbonTanggalPengambilan = Carbon::parse($tanggal_sewa);
         $carbonTanggalPengembalian = Carbon::parse($tanggal_pengembalian);
@@ -73,10 +77,25 @@ class SewaController extends Controller
 
         $cars = Mobil::find($id_mobil);
 
-        $cars->update(['stok'=>$stokBaru]);
+        $cars->update(['stok' => $stokBaru]);
 
-        
+
         // dd($sewa);
-        return view('Customer.KatalogMobil.pembayaran', compact('sewa', 'mobil', 'total_pembayaran','durasi'));
+        return view('Customer.KatalogMobil.pembayaran', compact('sewa', 'mobil', 'total_pembayaran', 'durasi'));
+    }
+
+    private function checkCustomerData($customerId)
+    {
+        $customer = Customer::find($customerId);
+
+        // Check if the customer exists and has filled in required data
+        if (
+            $customer && $customer->ktp && $customer->email && $customer->alamat &&
+            $customer->nama_orang_terdekat && $customer->email_darurat && $customer->no_telp_darurat
+        ) {
+            return true;
+        }
+
+        return false;
     }
 }
