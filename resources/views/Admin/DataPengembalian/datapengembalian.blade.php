@@ -33,35 +33,20 @@
                                 <th>ID TRANSAKSI</th>
                                 <th>TANGGAL PENGEMBALIAN</th>
                                 <th>WAKTU PENGEMBALIAN</th>
-                                <th>AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($pengembalians as $pengembalian)
+                            @foreach ($pengembalians as $pengembalian)
+                                
                                 <tr>
                                     <td>{{ $pengembalian->id_pengembalian }}</td>
-                                    <td>{{ $pengembalian->id_customer }}</td>
-                                    <td>{{ $pengembalian->id_mobil }}</td>
+                                    <td>{{ $pengembalian->sewa->id_customer }}</td>
+                                    <td>{{ $pengembalian->sewa->id_mobil }}</td>
                                     <td>{{ $pengembalian->id_transaksi }}</td>
-                                    <td>{{ $pengembalian->tanggal_pengembalian }}</td>
-                                    <td>{{ $pengembalian->waktu_pengembalian }}</td>
-                                    <td>
-                                        <a class="btn btn-warning"
-                                            href="{{ route('editpengembalian', $pengembalian->id_pengembalian) }}">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </a>
-                                        <form action="{{ route('deletepengembalian', $pengembalian->id_pengembalian) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <!-- Tombol Delete -->
-                                            <button type="submit" class="btn btn-danger"
-                                                onclick="return confirm('Yakin mau hapus?')"><i
-                                                    class="fa-solid fa-trash"></i></button>
-                                        </form>
-                                    </td>
+                                    <td>{{ $pengembalian->sewa->tanggal_pengembalian }}</td>
+                                    <td>{{ $pengembalian->sewa->waktu_pengembalian }}</td>
                                 </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -84,7 +69,7 @@
                     <div class="modal-body">
                         <select name="pengembalian" id="pengembalian" class="form-control mb-3">
                             @foreach ($transaksis as $transaksi)
-                                <option value="{{ $transaksi->id_transaksi }}">ID TRANSAKSI : {{ $transaksi->id_transaksi }}
+                                <option value="{{ $transaksi->id_transaksi }}">ID SEWA : {{ $transaksi->sewa->id_sewa }}
                                     ({{ $transaksi->sewa->customer->user->nama }})
                                 </option>
                             @endforeach
@@ -97,11 +82,12 @@
                             <option value="4">Jumlah Kembali : 4</option>
                             <option value="5">Jumlah Kembali : 5</option>
                         </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary">Kirim</button>
+                    </div>
                 </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary">Kirim</button>
-                </div>
             </div>
         </div>
     </div>

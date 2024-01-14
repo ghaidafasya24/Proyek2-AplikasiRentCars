@@ -1,5 +1,9 @@
 @extends('Customer.Layout.layoutCustomer')
-@section('title', 'Customer')
+@if (Auth::user()->role == 'admin')
+    @section('title', 'Dashboard Admin')
+@elseif(Auth::user()->role == 'customer')
+    @section('title', 'Customer')
+@endif
 @section('content')
 
     <!-- content  -->
@@ -56,7 +60,8 @@
                 <div class="col-md-6">
                     <label for="email_darurat" class="form-label">Email Darurat</label>
                     <input type="text" class="form-control" id="email_darurat" required
-                        placeholder="Masukkan email darurat" name="email_darurat" value="{{ $customer->email_darurat }}" disabled>
+                        placeholder="Masukkan email darurat" name="email_darurat" value="{{ $customer->email_darurat }}"
+                        disabled>
                     <br>
                     <hr>
                 </div>
@@ -68,13 +73,13 @@
                 </div>
                 <div class="col-md-6">
                     <label for="jumlah" class="form-label">Jumlah Mobil</label>
-                    <input type="number" class="form-control" id="jumlah" required placeholder="Jumlah Mobil yang Ingin Disewa"
-                        name="jumlah">
+                    <input type="number" class="form-control" id="jumlah" required
+                        placeholder="Jumlah Mobil yang Ingin Disewa" name="jumlah">
                 </div>
                 <div class="col-md-6">
                     <label for="tanggal_pengembalian" class="form-label">Tanggal Pengembalian</label>
-                    <input type="date" class="form-control" id="tanggal_pengembalian" required placeholder="dd/mm/yyyy"
-                        name="tanggal_pengembalian">
+                    <input type="date" class="form-control" id="tanggal_pengembalian" required
+                        placeholder="dd/mm/yyyy" name="tanggal_pengembalian">
                 </div>
                 <div class="col-md-6">
                     <label for="waktu_sewa" class="form-label">Waktu Sewa</label>
@@ -94,8 +99,7 @@
                     <br>
                     <button type="button" class="btn btn-secondary"
                         onclick="return window.location.href = '{{ route('home') }}'">Kembali</button>
-                    <button type="submit" class="btn btn-primary">Next <i
-                            class="fa-duotone fa-angles-right"></i></button>
+                    <button type="submit" class="btn btn-primary">Next <i class="fa-solid fa-forward"></i></button>
                     <br><br>
                 </div>
             </form>

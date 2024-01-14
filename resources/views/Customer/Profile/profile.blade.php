@@ -34,7 +34,7 @@
                     <div class="col-md-6">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" required placeholder="Masukkan password"
-                            name="password" value="*******" disabled>
+                            name="pas   ord" value="*******" disabled>
                     </div>
 
                 </div>
@@ -43,38 +43,41 @@
                     <div class="col-md-6">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" required placeholder="Masukkan email"
-                            name="email" value="{{ $profile->email ?? "" }}">
+                            name="email" value="{{ $profile->email ?? '' }}">
                     </div>
                     <div class="col-md-6">
                         <label for="nama_orang_terdekat" class="form-label">Nama Orang Terdekat</label>
                         <input type="text" class="form-control" id="nama_orang_terdekat" required
-                            placeholder="Masukkan nama orang terdekat" name="nama_orang_terdekat" value="{{ $profile->nama_orang_terdekat ?? ""}}">
+                            placeholder="Masukkan nama orang terdekat" name="nama_orang_terdekat"
+                            value="{{ $profile->nama_orang_terdekat ?? '' }}">
                     </div>
                     <div class="col-md-6">
                         <label for="email_darurat" class="form-label">Email Darurat</label>
                         <input type="text" class="form-control" id="email_darurat" required
-                            placeholder="Masukkan Email Darurat" name="email_darurat" value="{{ $profile->email_darurat ?? "" }}">
+                            placeholder="Masukkan Email Darurat" name="email_darurat"
+                            value="{{ $profile->email_darurat ?? '' }}">
                     </div>
                     <div class="col-md-6">
                         <label for="no_telp_darurat" class="form-label">No Telpon Darurat</label>
                         <input type="number" class="form-control" id="no_telp_darurat" required
-                            placeholder="Masukkan Nomor Telpon Darurat" name="no_telp_darurat" value="{{ $profile->no_telp_darurat ?? "" }}">
+                            placeholder="Masukkan Nomor Telpon Darurat" name="no_telp_darurat"
+                            value="{{ $profile->no_telp_darurat ?? '' }}">
                     </div>
-                    @if ($profile->ktp > 1)
-                    <div class="col-md-6 mt-3">
-                        <label for="ktp" class="form-label">KTP</label>
-                        <img src="{{ asset('assets/img/ktp/'.$profile->ktp) }}" alt="" width="100">
-                    </div>  
+                    @if ($profile && $profile->ktp)
+                        <div class="col-md-6 mt-3">
+                            <label for="ktp" class="form-label">KTP</label>
+                            <img src="{{ asset('assets/img/ktp/' . $profile->ktp) }}" alt="" width="100">
+                        </div>
                     @else
-                    <div class="col-md-6">
-                        <label for="ktp" class="form-label">Upload KTP</label>
-                        <input type="file" class="form-control" id="formFile" name="ktp">
-                    </div>
-                    
+                        <div class="col-md-6">
+                            <label for="ktp" class="form-label">Upload KTP</label>
+                            <input type="file" class="form-control" id="formFile" name="ktp">
+                        </div>
                     @endif
+
                     <div class="col-md-6">
                         <label for="alamat" class="form-label">Alamat</label>
-                        <textarea class="form-control" id="alamat" rows="3" name="alamat">{{ $profile->alamat ?? "" }}</textarea>
+                        <textarea class="form-control" id="alamat" rows="3" name="alamat">{{ $profile->alamat ?? '' }}</textarea>
                     </div>
                     <div class="col-md-6 mt-3">
                         <button type="submit" class="btn btn-success">Perbarui</button>

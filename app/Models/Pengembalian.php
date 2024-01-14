@@ -19,6 +19,11 @@ class Pengembalian extends Model
 
     public function sewa()
     {
-        return $this->hasMany(Sewa::class, 'id_sewa');
+        return $this->hasOne(Sewa::class, 'id_sewa');
+    }
+    
+    public function transaksi()
+    {
+        return $this->belongsTo(Transaksi::class, 'id_transaksi');
     }
 }

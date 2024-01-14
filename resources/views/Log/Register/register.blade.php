@@ -63,7 +63,7 @@
                 </div>
 
                 <p class="signup-link">
-                    Sudah memiliki akun? Silahkan <a href="">Login</a> disini.
+                    Sudah memiliki akun? Silahkan <a href="{{ route('Signin') }}">Login</a> disini.
                     <br><br>
                     <a href="{{ url('/') }}" class="up">Kembali ke halaman utama!</a>
                 </p>

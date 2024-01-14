@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-6">
                     <br>
-                    <button type="submit" class="btn btn-primary">Bayar</button>
+                    <button type="submit" class="btn btn-primary">Bayar <i class="fa-solid fa-money-check-dollar"></i></button>
                 </div>
 
             </form>

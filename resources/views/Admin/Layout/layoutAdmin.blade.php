@@ -9,7 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>@yield('title', 'Dashboard')</title>
+    <title>
+        @yield('title', 'Dashboard')
+    </title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('assets/css/all.min.css') }}" rel="stylesheet" type="text/css">

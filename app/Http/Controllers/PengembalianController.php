@@ -12,10 +12,11 @@ class PengembalianController extends Controller
 {
     public function datapengembalian()
     {
-        $transaksis = Transaksi::all();
+        $transaksis = Transaksi::with('sewa')->get();
         $sewas = Sewa::all();
+        $pengembalians = Pengembalian::with('transaksi','sewa')->get();
 
-        return view('Admin.DataPengembalian.datapengembalian', compact('transaksis', 'sewas'));
+        return view('Admin.DataPengembalian.datapengembalian', compact('transaksis', 'sewas','pengembalians'));
     }
 
 
@@ -26,33 +27,33 @@ class PengembalianController extends Controller
 
 
     public function tambahpengembalianPost(Request $request)
-    {
-        $request->validate([
-            'pengembalian' => 'required',
-            'jumlah' => 'required|numeric|min:1', // Sesuaikan dengan aturan validasi Anda
-        ]);
+{
+    $request->validate([
+        'pengembalian' => 'required',
+        'jumlah' => 'required|numeric|min:1', // Sesuaikan aturan validasi sesuai kebutuhan
+    ]);
 
-        // Ambil data pengembalian dan transaksi yang terkait
-        $pengembalian = Pengembalian::findOrFail($request->pengembalian);
-        $transaksi = Transaksi::findOrFail($pengembalian->id_transaksi); // Sesuaikan nama kolom relasi
+    // Ambil data terkait pengembalian dan transaksi
+    $pengembalian = Pengembalian::findOrFail($request->pengembalian);
+    $transaksi = Transaksi::where('id_transaksi', $pengembalian->id_transaksi)->first();
 
-        // Ambil data mobil yang terkait
-        $mobil = Mobil::findOrFail($transaksi->id_mobil);
+    $mobil = Mobil::findOrFail($transaksi->id_mobil);
 
-        // Tambahkan jumlah ke stok mobil
-        $mobil->stok += $request->jumlah;
-        $mobil->save();
+    // Tambahkan jumlah ke stok mobil
+    $mobil->stok += $request->jumlah;
+    $mobil->save();
 
-        // Simpan data pengembalian
-        $addPengembalian = [
-            'id_transaksi' => $request->pengembalian,
-            'jumlah' => $request->jumlah
-        ];
+    // Simpan data pengembalian
+    $addPengembalian = [
+        'id_transaksi' => $request->pengembalian,
+        'jumlah' => $request->jumlah,
+    ];
 
-        Pengembalian::create($addPengembalian);
+    Pengembalian::create($addPengembalian);
 
-        return redirect()->route('datapengembalian')->with('success', 'Pengembalian berhasil');
-    }
+    // Redirect dengan pesan sukses
+    return redirect()->route('datapengembalian')->with('success', 'Pengembalian berhasil');
+}
 
     public function editPengembalianView($id)
     {

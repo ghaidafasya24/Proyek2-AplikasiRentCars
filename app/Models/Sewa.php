@@ -40,6 +40,6 @@ class Sewa extends Model
 
   public function pengembalian()
   {
-    return $this->hasMany(Pengembalian::class, 'id_sewa');
+    return $this->hasOne(Pengembalian::class, 'id_sewa');
   }
 }

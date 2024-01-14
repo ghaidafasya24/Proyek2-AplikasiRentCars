@@ -1,5 +1,12 @@
 @extends('Admin.Layout.layoutAdmin')
-@section('title', 'Dashboard Admin')
+
+@if (Auth::user()->role == 'admin')
+    @section('title', 'Dashboard Admin')
+
+@elseif(Auth::user()->role == 'customer')
+    @section('title', 'Customer')
+
+@endif
 @section('content')
 
     @if (Auth::user()->role == 'admin')
@@ -16,7 +23,7 @@
             <!-- Content Row -->
             <div class="row">
 
-                <!-- Earnings (Monthly) Card Example -->
+                <!-- DATA MOBIL -->
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-primary shadow h-100 py-2">
                         <div class="card-body">
@@ -27,14 +34,14 @@
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $mobil }}</div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                     <i class="fa-solid fa-car"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Earnings (Monthly) Card Example -->
+                <!-- DATA SEWA -->
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-success shadow h-100 py-2">
                         <div class="card-body">
@@ -45,13 +52,16 @@
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $sewa }}</div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                
+
+                {{-- DATA PENGEMBALIAN  --}}
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-success shadow h-100 py-2">
                         <div class="card-body">
@@ -62,7 +72,8 @@
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pengembalian }}</div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+
                                 </div>
                             </div>
                         </div>
@@ -82,7 +93,8 @@
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $transaksi }}</div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                    <i class="fa-solid fa-rotate-left"></i>
+
                                 </div>
                             </div>
                         </div>

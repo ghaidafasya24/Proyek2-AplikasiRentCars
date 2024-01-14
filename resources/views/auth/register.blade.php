@@ -1,77 +1,79 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login.css">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+    <title>Register</title>
+</head>
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+<body>
+    <div class="container">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+        <div class="form">
+            <div class="form-title"><span>Selamat datang di Rent-Cars</span></div>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+            <div class="title-2"><span>SILAHKAN REGISTER</span></div>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+            <section class="bg-stars">
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+            </section>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+            <form action="{{ route('register') }}" method="POST">
+               @csrf
+                <div class="mid">
+                    <div class="input-container">
+                        <label for="nama_lengkap"></label>
+                        <input class="input-username" name="nama" type="text" placeholder="Masukkan nama lengkap..."
+                            autofocus required>
+                        <span> </span>
+                    </div>
+                    <div class="input-container">
+                        <label for="no_telp"></label>
+                        <input class="input-notelp" name="no_telp" type="text" placeholder="Masukkan nomor telepon..."
+                            autofocus required>
+                        <span> </span>
+                    </div>
+                    <div class="input-container">
+                        <label for="username"></label>
+                        <input class="input-username" name="username" type="username" placeholder="Masukkan username..."
+                            autofocus required>
+                        <span> </span>
+                    </div>
+                    <div class="input-container">
+                        <label for="password"></label>
+                        <input class="input-pwd" name="password" type="password" placeholder="Masukkan password"
+                            required>
+                    </div>
+                    <div class="input-container">
+                        <label for="password"></label>
+                        <input class="input-pwd" name="password_confirmation" type="password" placeholder="Konfirmasi password"
+                            required>
+                    </div>
+                    <button type="submit" class="submit">
+                        <span class="sign-text">Register</span>
+                    </button>
                 </div>
-            </div>
+
+                <p class="signup-link">
+                    Sudah memiliki akun? Silahkan <a href="{{ route('Signin') }}">Login</a> disini.
+                    <br><br>
+                    <a href="{{ url('/') }}" class="up">Kembali ke halaman utama!</a>
+                </p>
+
+            </form>
+
         </div>
+
     </div>
-</div>
-@endsection
+
+</body>
+
+</html>

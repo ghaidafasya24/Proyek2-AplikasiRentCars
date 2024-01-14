@@ -7,6 +7,7 @@
         <div class="container">
             <div class="masthead-subheading">Welcome To</div>
             <div class="masthead-heading text-uppercase">Rent-Cars</div>
+            <p>Jalan Sari Jadi No. 4 Kota Bandung | Hubungi Nomor 081908915320 | Email : rentcars@gmail.com</p>
 
             <!-- <div class="input-container">
                 <div class="">

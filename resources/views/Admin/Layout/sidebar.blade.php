@@ -58,7 +58,7 @@
         <!-- Nav Item - Tables -->
         <li class="nav-item">
             <a class="nav-link" href="{{ route('riwayattransaksi') }}">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-clock-rotate-left"></i>
                 <span>Riwayat Transaksi</span>
             </a>
         </li>
@@ -72,7 +72,7 @@
         </div>
     </ul>
 @elseif(Auth::user()->role == 'customer')
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -93,7 +93,7 @@
         <!-- Nav Item - Tables -->
         <li class="nav-item">
             <a class="nav-link" href="{{ route('home') }}">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-car"></i>
                 <span>Katalog Mobil</span>
             </a>
         </li>
@@ -109,7 +109,7 @@
         <!-- Nav Item - Tables -->
         <li class="nav-item">
             <a class="nav-link" href="{{ route('profile') }}">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fa-solid fa-user"></i>
                 <span>Profile</span>
             </a>
         </li>

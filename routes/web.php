@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -91,4 +93,3 @@ Route::middleware('auth')->group(function () {
 // Route::get('/step1',[customerController::class,'step1'])->name('step1');
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
