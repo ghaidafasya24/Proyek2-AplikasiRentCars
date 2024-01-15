@@ -80,7 +80,7 @@
                         <textarea class="form-control" id="alamat" rows="3" name="alamat">{{ $profile->alamat ?? '' }}</textarea>
                     </div>
                     <div class="col-md-6 mt-3">
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="submit" class="btn btn-success">Perbarui</button>
                     </div>
                 </form>
             </div>

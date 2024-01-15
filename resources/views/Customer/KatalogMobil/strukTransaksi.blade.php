@@ -17,11 +17,11 @@
 
                     {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                     <table>
-                        <tr>
+                        {{-- <tr>
                             <td class="">Id Transaksi</td>
                             <td class="p-2"> : </td>
                             <td> {{ $transaksi->id }} </td>
-                        </tr>
+                        </tr> --}}
                         <tr>
                             <td class="p-2">Id Customer</td>
                             <td class="p-2"> : </td>
@@ -66,7 +66,7 @@
                     <p class="text-center"> - TERIMAKASIH - </p>
                     <hr>
                     {{-- <a href="#" class="btn btn-secondary">Kembali ke halaman utama</a> --}}
-                    <a href="#" class="btn btn-success">Download pdf</a>
+                    {{-- <a href="#" class="btn btn-success">Download pdf</a> --}}
                 </div>
                 {{-- <div class="card-footer text-muted">
                     2 days ago
