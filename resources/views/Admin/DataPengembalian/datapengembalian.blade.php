@@ -7,8 +7,8 @@
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Data Pengembalian</h1>
         <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                                                                    For more information about DataTables, please visit the <a target="_blank"
-                                                                        href="https://datatables.net">official DataTables documentation</a>.</p> -->
+                                                                                For more information about DataTables, please visit the <a target="_blank"
+                                                                                    href="https://datatables.net">official DataTables documentation</a>.</p> -->
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -28,7 +28,7 @@
                         <thead>
                             <tr>
                                 <th>ID PENGEMBALIAN</th>
-                                <th>ID CUSTOMER</th>
+                                <th>NAMA CUSTOMER</th>
                                 <th>ID MOBIL</th>
                                 <th>ID TRANSAKSI</th>
                                 <th>TANGGAL PENGEMBALIAN</th>
@@ -39,15 +39,41 @@
                             @foreach ($pengembalians as $pengembalian)
                                 <tr>
                                     <td>{{ $pengembalian->id_pengembalian }}</td>
-                                    <td>{{ $pengembalian->sewa->id_customer }}</td>
-                                    <td>{{ $pengembalian->sewa->id_mobil }}</td>
+                                    <td>
+                                        @if ($pengembalian->transaksi && $pengembalian->transaksi->sewa)
+                                            {{ $pengembalian->transaksi->sewa->customer->user->nama }}
+                                        @else
+                                            Tidak Tersedia
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($pengembalian->transaksi && $pengembalian->transaksi->sewa)
+                                            {{ $pengembalian->transaksi->sewa->id_mobil }}
+                                        @else
+                                            Tidak Tersedia
+                                        @endif
+                                    </td>
                                     <td>{{ $pengembalian->id_transaksi }}</td>
-                                    <td>{{ $pengembalian->sewa->tanggal_pengembalian }}</td>
-                                    <td>{{ $pengembalian->sewa->waktu_pengembalian }}</td>
+                                    <td>
+                                        @if ($pengembalian->transaksi && $pengembalian->transaksi->sewa)
+                                            {{ $pengembalian->transaksi->sewa->tanggal_pengembalian }}
+                                        @else
+                                            Tidak Tersedia
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($pengembalian->transaksi && $pengembalian->transaksi->sewa)
+                                            {{ $pengembalian->transaksi->sewa->waktu_pengembalian }}
+                                        @else
+                                            Tidak Tersedia
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
+
+
                 </div>
             </div>
         </div>
@@ -69,7 +95,7 @@
                         <select name="pengembalian" id="pengembalian" class="form-control mb-3">
                             @foreach ($transaksis as $transaksi)
                                 <option value="{{ $transaksi->id_transaksi }}">ID SEWA : {{ $transaksi->sewa->id_sewa }}
-                                    ({{ $transaksi->sewa->customer->user->nama }})
+                                    ({{ $transaksi->sewa->customer->user->nama }} {{ $transaksi->id_transaksi }})
                                 </option>
                             @endforeach
                         </select>

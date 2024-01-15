@@ -29,40 +29,41 @@ class PengembalianController extends Controller
     public function tambahpengembalianPost(Request $request)
     {
         $request->validate([
-            'pengembalian' => 'required',
+            'pengembalian' => 'required', // Sesuaikan aturan validasi sesuai kebutuhan
             'jumlah' => 'required|numeric|min:1', // Sesuaikan aturan validasi sesuai kebutuhan
         ]);
 
-        // Ambil data terkait pengembalian dan transaksi
-        $pengembalian = Pengembalian::findOrFail($request->pengembalian);
-        $transaksi = Transaksi::where('id_transaksi', $pengembalian->id_transaksi)->first();
+        // Ambil data terkait transaksi
+        $transaksi = Transaksi::find($request->pengembalian);
 
-
-        // Cek apakah pengembalian sudah pernah dilakukan
-        $existingPengembalian = Pengembalian::where('id_transaksi', $transaksi->id_transaksi)->first();
-
-        if ($existingPengembalian) {
-            return redirect()->route('datapengembalian')->with('error', 'Pengembalian untuk transaksi ini sudah pernah dilakukan.');
+        if (!$transaksi) {
+            return redirect()->route('datapengembalian')->with('error', 'Data transaksi tidak ditemukan.');
         }
 
-        $mobil = Mobil::findOrFail($transaksi->id_mobil);
-        // dd($mobil);
-        // Tambahkan jumlah ke stok mobil
-        $test = $mobil->stok += $request->jumlah;
-        // dd($test);
+        // Update stok mobil
+        $mobil = Mobil::find($transaksi->id_mobil);
+
+        if (!$mobil) {
+            return redirect()->route('datapengembalian')->with('error', 'Data mobil tidak ditemukan.');
+        }
+
+        $mobil->stok += $request->jumlah;
         $mobil->save();
 
         // Simpan data pengembalian
         $addPengembalian = [
-            'id_transaksi' => $request->pengembalian,
+            'id_transaksi' => $transaksi->id_transaksi,
             'jumlah' => $request->jumlah,
         ];
 
         Pengembalian::create($addPengembalian);
 
+        
+
         // Redirect dengan pesan sukses
-        return redirect()->route('datapengembalian')->with('success', 'Pengembalian berhasil');
+        return redirect()->route('datapengembalian')->with('success', 'Pengembalian berhasil dan stok mobil diperbarui.');
     }
+
 
     public function editPengembalianView($id)
     {
