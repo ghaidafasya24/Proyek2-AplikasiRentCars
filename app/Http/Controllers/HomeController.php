@@ -33,6 +33,7 @@ class HomeController extends Controller
         $sewa = Sewa::count();
         $transaksi = Transaksi::count();
         $pengembalian = Pengembalian::count();
+        
 
         return view('Admin.dashboard',compact('mobils','mobil','sewa','transaksi','pengembalian'));
     }

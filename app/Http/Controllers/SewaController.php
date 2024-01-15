@@ -55,9 +55,7 @@ class SewaController extends Controller
             'stok' => $request->jumlah
         ];
 
-        if (!$this->checkCustomerData($request->id_customer)) {
-            return redirect()->back()->with('error', 'Lengkapi data diri terlebih dahulu');
-        }
+        
 
         $tanggal_sewa = $request->input('tanggal_sewa');
         $tanggal_pengembalian = $request->input('tanggal_pengembalian');

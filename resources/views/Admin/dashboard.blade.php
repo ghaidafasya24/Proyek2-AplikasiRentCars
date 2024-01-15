@@ -176,12 +176,11 @@
                                 @if ($mobil->stok <= 0)
                                     <button class='btn btn-secondary disabled'>Tidak Tersedia</button>
                                 @else
-                                    @if (isset($customerDataExists) && $customerDataExists)
-                                        <a href="{{ route('bookingmobil', $mobil->id_mobil) }}"
-                                            class="btn btn-primary">Booking</a>
-                                    @else
-                                        <button class="btn btn-primary" onclick="showNotif()">Booking</button>
-                                    @endif
+                                    <a href="{{ Auth::check() && Auth::user()->customer ? route('bookingmobil', $mobil->id_mobil) : '#' }}"
+                                        class="btn btn-primary"
+                                        onclick="{{ Auth::check() && Auth::user()->customer ? '' : 'showNotif()' }}">
+                                        Booking
+                                    </a>
                                 @endif
                             </div>
                         </div>
