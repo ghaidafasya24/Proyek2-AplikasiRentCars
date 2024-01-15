@@ -37,12 +37,17 @@ class SewaController extends Controller
             'lokasi_pengambilan' => 'required|string',
             'jumlah' => 'required|numeric'
         ]);
+
         $id_mobil = $request->id_mobil;
         $id_customer = $request->id_customer;
         $harga = $request->harga;
         $jumlah = $request->jumlah;
         $stok = $request->stok;
 
+        // Pengecekan apakah jumlah yang diminta melebihi stok
+        if ($jumlah > $stok) {
+            return redirect()->back()->with('error', 'Jumlah yang diminta melebihi stok yang tersedia.');
+        }
 
         $sewa = [
             'tanggal_sewa' => $request->tanggal_sewa,
@@ -55,11 +60,8 @@ class SewaController extends Controller
             'stok' => $request->jumlah
         ];
 
-        
-
         $tanggal_sewa = $request->input('tanggal_sewa');
         $tanggal_pengembalian = $request->input('tanggal_pengembalian');
-
 
         $carbonTanggalPengambilan = Carbon::parse($tanggal_sewa);
         $carbonTanggalPengembalian = Carbon::parse($tanggal_pengembalian);
@@ -77,10 +79,9 @@ class SewaController extends Controller
 
         $cars->update(['stok' => $stokBaru]);
 
-
-        // dd($sewa);
         return view('Customer.KatalogMobil.pembayaran', compact('sewa', 'mobil', 'total_pembayaran', 'durasi'));
     }
+
 
     private function checkCustomerData($customerId)
     {
