@@ -7,6 +7,9 @@
 
         <h1 class="h3 mb-3 text-gray-800">Transaksi Pembayaran</h1>
         <div class="row w-100 d-flex justify-content-center align-items-center" style="padding-left: 2em;">
+            <h6 class="">Silahkan transfer pada rekening berikut : 234237349 a.n Mutiara Azzahra</h6>
+            <br><hr><br><br>
+            
             {{-- <div class="card mb-3 col-ms-4" style="max-width: 1000px;"> --}}
             <form class="row g-3" action="{{ route('transaksi') }}" method="POST" enctype="multipart/form-data">
                 @csrf
