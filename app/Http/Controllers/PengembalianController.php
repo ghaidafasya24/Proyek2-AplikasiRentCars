@@ -14,9 +14,9 @@ class PengembalianController extends Controller
     {
         $transaksis = Transaksi::with('sewa')->get();
         $sewas = Sewa::all();
-        $pengembalians = Pengembalian::with('transaksi','sewa')->get();
+        $pengembalians = Pengembalian::with('transaksi', 'sewa')->get();
 
-        return view('Admin.DataPengembalian.datapengembalian', compact('transaksis', 'sewas','pengembalians'));
+        return view('Admin.DataPengembalian.datapengembalian', compact('transaksis', 'sewas', 'pengembalians'));
     }
 
 
@@ -27,33 +27,42 @@ class PengembalianController extends Controller
 
 
     public function tambahpengembalianPost(Request $request)
-{
-    $request->validate([
-        'pengembalian' => 'required',
-        'jumlah' => 'required|numeric|min:1', // Sesuaikan aturan validasi sesuai kebutuhan
-    ]);
+    {
+        $request->validate([
+            'pengembalian' => 'required',
+            'jumlah' => 'required|numeric|min:1', // Sesuaikan aturan validasi sesuai kebutuhan
+        ]);
 
-    // Ambil data terkait pengembalian dan transaksi
-    $pengembalian = Pengembalian::findOrFail($request->pengembalian);
-    $transaksi = Transaksi::where('id_transaksi', $pengembalian->id_transaksi)->first();
+        // Ambil data terkait pengembalian dan transaksi
+        $pengembalian = Pengembalian::findOrFail($request->pengembalian);
+        $transaksi = Transaksi::where('id_transaksi', $pengembalian->id_transaksi)->first();
 
-    $mobil = Mobil::findOrFail($transaksi->id_mobil);
 
-    // Tambahkan jumlah ke stok mobil
-    $mobil->stok += $request->jumlah;
-    $mobil->save();
+        // Cek apakah pengembalian sudah pernah dilakukan
+        $existingPengembalian = Pengembalian::where('id_transaksi', $transaksi->id_transaksi)->first();
 
-    // Simpan data pengembalian
-    $addPengembalian = [
-        'id_transaksi' => $request->pengembalian,
-        'jumlah' => $request->jumlah,
-    ];
+        if ($existingPengembalian) {
+            return redirect()->route('datapengembalian')->with('error', 'Pengembalian untuk transaksi ini sudah pernah dilakukan.');
+        }
 
-    Pengembalian::create($addPengembalian);
+        $mobil = Mobil::findOrFail($transaksi->id_mobil);
+        // dd($mobil);
+        // Tambahkan jumlah ke stok mobil
+        $test = $mobil->stok += $request->jumlah;
+        // dd($test);
+        $mobil->save();
 
-    // Redirect dengan pesan sukses
-    return redirect()->route('datapengembalian')->with('success', 'Pengembalian berhasil');
-}
+        // Simpan data pengembalian
+        $addPengembalian = [
+            'id_transaksi' => $request->pengembalian,
+            'jumlah' => $request->jumlah,
+        ];
+
+        Pengembalian::create($addPengembalian);
+
+        // Redirect dengan pesan sukses
+        return redirect()->route('datapengembalian')->with('success', 'Pengembalian berhasil');
+    }
 
     public function editPengembalianView($id)
     {
