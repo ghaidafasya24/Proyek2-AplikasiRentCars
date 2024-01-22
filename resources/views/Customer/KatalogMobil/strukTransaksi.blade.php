@@ -66,7 +66,7 @@
                     <p class="text-center"> - TERIMAKASIH - </p>
                     <hr>
                     {{-- <a href="#" class="btn btn-secondary">Kembali ke halaman utama</a> --}}
-                    {{-- <a href="#" class="btn btn-success">Download pdf</a> --}}
+                    <a href="{{ route('Unduh',$transaksi->id_transaksi) }}" class="btn btn-success">Download pdf</a>
                 </div>
                 {{-- <div class="card-footer text-muted">
                     2 days ago

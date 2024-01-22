@@ -7,6 +7,7 @@ use App\Http\Controllers\MobilController;
 use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\SewaController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\UnduhPdfController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -82,6 +83,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/TransaksiPembayaran', [TransaksiController::class, 'pembayaranTampil'])->name('formpembayaran');
     Route::get('/Struk', [TransaksiController::class, 'struk'])->name('struktransaksi');
     Route::get('/ProfileCustomer', [CustomerController::class, 'profile'])->name('profile');
+    Route::get('/DownloadPdf/{id}', [UnduhPdfController::class, 'unduhPDF'])->name('Unduh');
+
+
 
     // routes/web.php
 
